@@ -50,6 +50,56 @@ nav a:hover {
     transition: color 0.3s ease; /* Transición suave */
 }
 
+.search-bar {
+    display: flex;
+    gap: 0.5rem;
+}
+.search-bar input {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+.search-bar button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.rutas-boxgrid {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.rutas-boxgrid img {
+    width: 100%;
+    height: auto;
+}
+.rutas-boxgrid h3 {
+    margin: 0;
+    padding: 1rem;
+    background-color: #f4f4f4;
+}
+.rutasbox-info {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    background-color: #f9f9f9;
+}
+.rutasbox-info div {
+    text-align: center;
+}
+.rutas-boxgrid p {
+    padding: 1rem;
+}
+
 .button-group {
     display: flex; /* Alinea los botones en línea */
     gap: 0.5rem; /* Espaciado entre los botones */
