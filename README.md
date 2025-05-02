@@ -1,6 +1,2 @@
-# HOLA
-### ESTO ES UNA PRUEBA
-## BASES DE DATOS:
-## LENGUAJE DE MARCAS
-## DESCARGAR GUIA DE USUARIO
-## DESCARGAR GUIA DE DESPLIEGUE
+Diagrama clases entregado
+Diagrama entidad.relacion entregado
