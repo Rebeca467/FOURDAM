@@ -1,2 +1,2 @@
-Diagrama clases entregado
-Diagrama entidad.relacion entregado
+# Diagrama clases entregado
+## Diagrama entidad.relacion entregado
