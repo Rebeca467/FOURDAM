@@ -12,14 +12,6 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- Schema mydb
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
--- -----------------------------------------------------
--- Schema concurso
--- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema concurso
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `concurso` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
 USE `mydb` ;
 
 -- -----------------------------------------------------
@@ -164,7 +156,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Puntos_interes` (
   `idPuntos_interes` INT NOT NULL,
   `id_rutas` INT NOT NULL,
   `nombre` VARCHAR(45) NOT NULL,
-  `nombre` VARCHAR(45) NOT NULL,
   `tipo` ENUM('HISTÓRICO-ARQUEOLÓGICO', 'NATURALEZA', 'MIRADOR', 'AREA DE DESCANSO', 'PUNTO DE AGUA', 'REFUGIO', 'CULTURAL', 'GEOLOGICO', 'FAUNA ESPECIFICA', 'BOTANICO') NOT NULL,
   `caracteristicas` TEXT NOT NULL,
   `url` TEXT NOT NULL,
@@ -219,129 +210,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Actividades` (
     REFERENCES `mydb`.`Rutas` (`id_rutas`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`table1`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`table1` (
-)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`Calendario_has_Rutas`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Calendario_has_Rutas` (
-  `Calendario_idCalendario` INT NOT NULL,
-  `Rutas_id_rutas` INT NOT NULL,
-  PRIMARY KEY (`Calendario_idCalendario`, `Rutas_id_rutas`),
-  INDEX `fk_Calendario_has_Rutas_Rutas1_idx` (`Rutas_id_rutas` ASC) VISIBLE,
-  INDEX `fk_Calendario_has_Rutas_Calendario1_idx` (`Calendario_idCalendario` ASC) VISIBLE,
-  CONSTRAINT `fk_Calendario_has_Rutas_Calendario1`
-    FOREIGN KEY (`Calendario_idCalendario`)
-    REFERENCES `mydb`.`Calendario` (`idCalendario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Calendario_has_Rutas_Rutas1`
-    FOREIGN KEY (`Rutas_id_rutas`)
-    REFERENCES `mydb`.`Rutas` (`id_rutas`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-USE `concurso` ;
-
--- -----------------------------------------------------
--- Table `concurso`.`grupos`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `concurso`.`grupos` (
-  `codgrupo` INT NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(30) CHARACTER SET 'utf8mb3' NOT NULL,
-  `localidad` VARCHAR(20) CHARACTER SET 'utf8mb3' NOT NULL,
-  `estilo` VARCHAR(20) CHARACTER SET 'utf8mb3' NOT NULL,
-  `esgrupo` TINYINT(1) NOT NULL DEFAULT '1',
-  `annoGrab` INT NULL DEFAULT NULL,
-  `fechaEstreno` DATE NULL DEFAULT NULL,
-  `compania` VARCHAR(35) CHARACTER SET 'utf8mb3' NULL DEFAULT NULL,
-  PRIMARY KEY (`codgrupo`),
-  INDEX `indice_localidad_grupo` (`localidad` ASC) VISIBLE)
-ENGINE = InnoDB
-AUTO_INCREMENT = 23;
-
-
--- -----------------------------------------------------
--- Table `concurso`.`canciones`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `concurso`.`canciones` (
-  `numCancion` INT NOT NULL AUTO_INCREMENT,
-  `grupo` INT NOT NULL,
-  `duracion` TIME NOT NULL,
-  `titulo` VARCHAR(40) CHARACTER SET 'utf8mb3' NOT NULL,
-  `total_votos` INT NULL DEFAULT '0',
-  PRIMARY KEY (`numCancion`),
-  INDEX `fk_cancion_grupo` (`grupo` ASC) VISIBLE,
-  CONSTRAINT `fk_cancion_grupo`
-    FOREIGN KEY (`grupo`)
-    REFERENCES `concurso`.`grupos` (`codgrupo`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
-ENGINE = InnoDB
-AUTO_INCREMENT = 66;
-
-
--- -----------------------------------------------------
--- Table `concurso`.`componentes`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `concurso`.`componentes` (
-  `idComp` INT NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(20) CHARACTER SET 'utf8mb3' NOT NULL,
-  `apellido` VARCHAR(40) CHARACTER SET 'utf8mb3' NOT NULL,
-  `alias` VARCHAR(20) CHARACTER SET 'utf8mb3' NULL DEFAULT NULL,
-  `funcion` VARCHAR(30) CHARACTER SET 'utf8mb3' NULL DEFAULT NULL,
-  `grupo` INT NOT NULL,
-  PRIMARY KEY (`idComp`),
-  INDEX `fk_componente_grupo` (`grupo` ASC) VISIBLE,
-  CONSTRAINT `fk_componente_grupo`
-    FOREIGN KEY (`grupo`)
-    REFERENCES `concurso`.`grupos` (`codgrupo`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
-ENGINE = InnoDB
-AUTO_INCREMENT = 116;
-
-
--- -----------------------------------------------------
--- Table `concurso`.`usuarios`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `concurso`.`usuarios` (
-  `user` VARCHAR(15) CHARACTER SET 'utf8mb3' NOT NULL,
-  `contraseña` VARCHAR(15) CHARACTER SET 'utf8mb3' NOT NULL,
-  `nombre` VARCHAR(15) CHARACTER SET 'utf8mb3' NOT NULL,
-  `apellidos` VARCHAR(30) CHARACTER SET 'utf8mb3' NOT NULL,
-  `fechanac` DATE NULL DEFAULT NULL,
-  PRIMARY KEY (`user`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `concurso`.`votos`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `concurso`.`votos` (
-  `usuario` VARCHAR(15) CHARACTER SET 'utf8mb3' NOT NULL,
-  `fecha` DATE NOT NULL,
-  `cancion` INT NOT NULL,
-  PRIMARY KEY (`usuario`, `fecha`),
-  INDEX `fk_voto_cancion` (`cancion` ASC) VISIBLE,
-  CONSTRAINT `fk_voto_cancion`
-    FOREIGN KEY (`cancion`)
-    REFERENCES `concurso`.`canciones` (`numCancion`)
-    ON UPDATE CASCADE,
-  CONSTRAINT `fk_voto_usuario`
-    FOREIGN KEY (`usuario`)
-    REFERENCES `concurso`.`usuarios` (`user`)
-    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
