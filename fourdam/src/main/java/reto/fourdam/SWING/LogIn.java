@@ -4,6 +4,8 @@
  */
 package reto.fourdam.SWING;
 
+import reto.fourdam.Usuario;
+
 /**
  *
  * @author DAM120
@@ -15,6 +17,7 @@ public class LogIn extends javax.swing.JFrame {
      */
     public LogIn() {
         initComponents();
+        
     }
 
     /**
@@ -112,7 +115,7 @@ public class LogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-      new Menu().setVisible(true);
+      new VerRutas(new Usuario()).setVisible(true);
       this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -121,7 +124,7 @@ public class LogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new Menu().setVisible(true);
+        new Menu(new Usuario(this.jTextField1.getText(),this.jTextField2.getText())).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
