@@ -16,7 +16,7 @@ Breve resumen del objetivo del proyecto, su funcionalidad principal y tecnologí
 - Oriol Fernández Saiz  (@MaxwellRoyers)
 - Fabián Saiz Landeras  (@Napster002)
 - Ciro  Galán Vertiz  (@CiroGalanVertiz)
-- Ana María Rodríguez Méndez  (@anarodirguezm)
+- Ana María Rodríguez Méndez  (@anarodriguezm)
 
 ## Diagrama Entidad-Relación (E/R)
 [Ver ell Diagrama E/R](./docs/diagrama-er.pdf)
