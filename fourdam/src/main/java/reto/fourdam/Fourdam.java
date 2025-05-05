@@ -4,6 +4,8 @@
 
 package reto.fourdam;
 
+import reto.fourdam.SWING.LogIn;
+
 /**
  *
  * @author DAM124
@@ -11,6 +13,6 @@ package reto.fourdam;
 public class Fourdam {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        new LogIn().setVisible(true);
     }
 }
