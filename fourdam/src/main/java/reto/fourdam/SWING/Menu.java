@@ -10,7 +10,7 @@ import reto.fourdam.Usuario;
  *
  * @author DAM120
  */
-public class Menu extends LogIn {
+public class Menu extends javax.swing.JFrame{
     private Usuario usuario;
 
     /**
