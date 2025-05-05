@@ -7,18 +7,20 @@ package reto.fourdam.SWING;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import reto.fourdam.Usuario;
 
 /**
  *
  * @author DAM120
  */
 public class CrearRutas extends javax.swing.JFrame {
-
+private Usuario usuario;
     /**
      * Creates new form CrearRutas
      */
-    public CrearRutas() {
+    public CrearRutas(Usuario usuario) {
         initComponents();
+        this.usuario=usuario;
     }
 
     /**
