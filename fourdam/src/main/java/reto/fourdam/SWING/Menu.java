@@ -4,17 +4,21 @@
  */
 package reto.fourdam.SWING;
 
+import reto.fourdam.Usuario;
+
 /**
  *
  * @author DAM120
  */
-public class Menu extends javax.swing.JFrame {
+public class Menu extends LogIn {
+    private Usuario usuario;
 
     /**
      * Creates new form NewJFrame
      */
-    public Menu() {
+    public Menu(Usuario usuario) {
         initComponents();
+        this.usuario=usuario;
     }
 
     /**
@@ -81,7 +85,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        new CrearRutas().setVisible(true);
+        new CrearRutas(usuario).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -90,7 +94,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new VerRutas().setVisible(true);
+        new VerRutas(usuario).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 

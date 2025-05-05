@@ -4,17 +4,22 @@
  */
 package reto.fourdam.SWING;
 
+import reto.fourdam.Usuario;
+
 /**
  *
  * @author DAM120
  */
 public class VerRutas extends javax.swing.JFrame {
-
+private Usuario usuario;
     /**
      * Creates new form VerRutas
      */
-    public VerRutas() {
+   
+    public VerRutas(Usuario usuario) {
         initComponents();
+        this.usuario=usuario;
+        
     }
 
     /**

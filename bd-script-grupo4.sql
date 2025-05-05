@@ -5,19 +5,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema fourdam
+-- Schema mydb
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema fourdam
+-- Schema mydb
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `fourdam` DEFAULT CHARACTER SET utf8 ;
-USE `fourdam` ;
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
+USE `mydb` ;
 
 -- -----------------------------------------------------
--- Table `fourdam`.`Usuarios`
+-- Table `mydb`.`Usuarios`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `fourdam`.`Usuarios` (
+CREATE TABLE IF NOT EXISTS `mydb`.`Usuarios` (
   `id_usuario` INT NOT NULL,
   `nombre` VARCHAR(45) NOT NULL,
   `apellidos` VARCHAR(45) NOT NULL,
@@ -29,9 +29,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `fourdam`.`Rutas`
+-- Table `mydb`.`Rutas`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `fourdam`.`Rutas` (
+CREATE TABLE IF NOT EXISTS `mydb`.`Rutas` (
   `id_rutas` INT NOT NULL,
   `id_usuario` INT NOT NULL,
   `nombre` VARCHAR(45) NOT NULL,
@@ -64,16 +64,16 @@ CREATE TABLE IF NOT EXISTS `fourdam`.`Rutas` (
   INDEX `fk_Rutas_Usuarios1_idx` (`id_usuario` ASC) VISIBLE,
   CONSTRAINT `fk_Rutas_Usuarios1`
     FOREIGN KEY (`id_usuario`)
-    REFERENCES `fourdam`.`Usuarios` (`id_usuario`)
+    REFERENCES `mydb`.`Usuarios` (`id_usuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `fourdam`.`Calendario`
+-- Table `mydb`.`Calendario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `fourdam`.`Calendario` (
+CREATE TABLE IF NOT EXISTS `mydb`.`Calendario` (
   `idCalendario` INT NOT NULL,
   `id_usuario` INT NOT NULL,
   `Rutas_id_rutas` INT NOT NULL,
@@ -85,54 +85,53 @@ CREATE TABLE IF NOT EXISTS `fourdam`.`Calendario` (
   INDEX `fk_Calendario_Rutas1_idx` (`Rutas_id_rutas` ASC) VISIBLE,
   CONSTRAINT `fk_Calendario_Usuarios1`
     FOREIGN KEY (`id_usuario`)
-    REFERENCES `fourdam`.`Usuarios` (`id_usuario`)
+    REFERENCES `mydb`.`Usuarios` (`id_usuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Calendario_Rutas1`
     FOREIGN KEY (`Rutas_id_rutas`)
-    REFERENCES `fourdam`.`Rutas` (`id_rutas`)
+    REFERENCES `mydb`.`Rutas` (`id_rutas`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `fourdam`.`Valoraciones`
+-- Table `mydb`.`Valoraciones`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `fourdam`.`Valoraciones` (
+CREATE TABLE IF NOT EXISTS `mydb`.`Valoraciones` (
   `idValoraciones` INT NOT NULL,
   `id_usuario` INT NOT NULL,
-  `Rutas_id_rutas` INT NOT NULL,
+  `id_rutas` INT NOT NULL,
   `fecha` DATE NOT NULL,
   `dificultad` TINYINT NOT NULL,
   `belleza` TINYINT NOT NULL,
   `interés` TINYINT NOT NULL,
   `texto_tecnico` VARCHAR(45) NULL,
   `texto_reseña` VARCHAR(45) NULL,
-  PRIMARY KEY (`idValoraciones`, `Rutas_id_rutas`),
+  PRIMARY KEY (`idValoraciones`, `id_rutas`),
   INDEX `fk_Valoraciones_Usuarios1_idx` (`id_usuario` ASC) VISIBLE,
   UNIQUE INDEX `id_usuario_UNIQUE` (`id_usuario` ASC) VISIBLE,
-  INDEX `fk_Valoraciones_Rutas1_idx` (`Rutas_id_rutas` ASC) VISIBLE,
-  UNIQUE INDEX `Rutas_id_rutas_UNIQUE` (`Rutas_id_rutas` ASC) VISIBLE,
+  INDEX `fk_Valoraciones_Rutas1_idx` (`id_rutas` ASC) VISIBLE,
+  UNIQUE INDEX `Rutas_id_rutas_UNIQUE` (`id_rutas` ASC) VISIBLE,
   CONSTRAINT `fk_Valoraciones_Usuarios1`
     FOREIGN KEY (`id_usuario`)
-    REFERENCES `fourdam`.`Usuarios` (`id_usuario`)
+    REFERENCES `mydb`.`Usuarios` (`id_usuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Valoraciones_Rutas1`
-    FOREIGN KEY (`Rutas_id_rutas`)
-    REFERENCES `fourdam`.`Rutas` (`id_rutas`)
+    FOREIGN KEY (`id_rutas`)
+    REFERENCES `mydb`.`Rutas` (`id_rutas`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `fourdam`.`Puntos_peligro`
+-- Table `mydb`.`Puntos_peligro`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `fourdam`.`Puntos_peligro` (
+CREATE TABLE IF NOT EXISTS `mydb`.`Puntos_peligro` (
   `idPuntos_peligro` INT NOT NULL,
-  `Puntos_peligrocol` VARCHAR(45) NULL,
   `descripcion` TEXT NOT NULL,
   `km` DOUBLE NOT NULL,
   `imagen` VARCHAR(45) NOT NULL,
@@ -143,16 +142,16 @@ CREATE TABLE IF NOT EXISTS `fourdam`.`Puntos_peligro` (
   INDEX `fk_Puntos_peligro_Rutas1_idx` (`id_rutas` ASC) VISIBLE,
   CONSTRAINT `fk_Puntos_peligro_Rutas1`
     FOREIGN KEY (`id_rutas`)
-    REFERENCES `fourdam`.`Rutas` (`id_rutas`)
+    REFERENCES `mydb`.`Rutas` (`id_rutas`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `fourdam`.`Puntos_interes`
+-- Table `mydb`.`Puntos_interes`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `fourdam`.`Puntos_interes` (
+CREATE TABLE IF NOT EXISTS `mydb`.`Puntos_interes` (
   `idPuntos_interes` INT NOT NULL,
   `id_rutas` INT NOT NULL,
   `nombre` VARCHAR(45) NOT NULL,
@@ -165,16 +164,16 @@ CREATE TABLE IF NOT EXISTS `fourdam`.`Puntos_interes` (
   INDEX `fk_Puntos_interes_Rutas1_idx` (`id_rutas` ASC) VISIBLE,
   CONSTRAINT `fk_Puntos_interes_Rutas1`
     FOREIGN KEY (`id_rutas`)
-    REFERENCES `fourdam`.`Rutas` (`id_rutas`)
+    REFERENCES `mydb`.`Rutas` (`id_rutas`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `fourdam`.`Fotos`
+-- Table `mydb`.`Fotos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `fourdam`.`Fotos` (
+CREATE TABLE IF NOT EXISTS `mydb`.`Fotos` (
   `idFotos` INT NOT NULL,
   `idPuntos_interes` INT NOT NULL,
   `idPuntos_peligro` INT NOT NULL,
@@ -185,21 +184,21 @@ CREATE TABLE IF NOT EXISTS `fourdam`.`Fotos` (
   INDEX `fk_Fotos_Puntos_peligro1_idx` (`idPuntos_peligro` ASC) VISIBLE,
   CONSTRAINT `fk_Fotos_Puntos_interes1`
     FOREIGN KEY (`idPuntos_interes`)
-    REFERENCES `fourdam`.`Puntos_interes` (`idPuntos_interes`)
+    REFERENCES `mydb`.`Puntos_interes` (`idPuntos_interes`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Fotos_Puntos_peligro1`
     FOREIGN KEY (`idPuntos_peligro`)
-    REFERENCES `fourdam`.`Puntos_peligro` (`idPuntos_peligro`)
+    REFERENCES `mydb`.`Puntos_peligro` (`idPuntos_peligro`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `fourdam`.`Actividades`
+-- Table `mydb`.`Actividades`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `fourdam`.`Actividades` (
+CREATE TABLE IF NOT EXISTS `mydb`.`Actividades` (
   `idActividades` INT NOT NULL,
   `id_rutas` INT NOT NULL,
   `nombre_actividad` VARCHAR(45) NOT NULL,
@@ -207,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `fourdam`.`Actividades` (
   INDEX `fk_Actividades_Rutas_idx` (`id_rutas` ASC) VISIBLE,
   CONSTRAINT `fk_Actividades_Rutas`
     FOREIGN KEY (`id_rutas`)
-    REFERENCES `fourdam`.`Rutas` (`id_rutas`)
+    REFERENCES `mydb`.`Rutas` (`id_rutas`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
