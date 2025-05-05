@@ -15,7 +15,7 @@ import java.util.Properties;
  */
 public class AccesoBaseDatos {
     private Connection conn = null;
-    private static final String BD = "fourdam";
+    private static final String BD = "mydb";
     private static final String USUARIO = "root";
     private static final String CLAVE = "mysql";
     private static final String URL = "jdbc:mysql://localhost:3307/" + BD;
