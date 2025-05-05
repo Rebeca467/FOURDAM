@@ -1,0 +1,285 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #0078d7;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Navigation */
+nav {
+    background-color: #005a9e;
+    padding: 0.5rem 1rem; /* Espaciado interno */
+    display: flex; /* Activa Flexbox */
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: space-between; /* Espacia los elementos principales */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none; /* Quita las viñetas */
+    margin: 0; /* Elimina el margen */
+    padding: 0; /* Elimina el relleno */
+    display: flex; /* Muestra los elementos en línea */
+    gap: 1rem; /* Espaciado entre los enlaces */
+}
+
+nav a:hover {
+    text-decoration: none;
+    color: #e6f7ff; /* Color de texto al pasar el mouse */
+    transition: color 0.3s ease; /* Transición suave */
+}
+
+.search-bar {
+    display: flex;
+    gap: 0.5rem;
+}
+.search-bar input {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+.search-bar button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.rutas-boxgrid {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.rutas-boxgrid img {
+    width: 100%;
+    height: auto;
+}
+.rutas-boxgrid h3 {
+    margin: 0;
+    padding: 1rem;
+    background-color: #f4f4f4;
+}
+.rutasbox-info {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    background-color: #f9f9f9;
+}
+.rutasbox-info div {
+    text-align: center;
+}
+.rutas-boxgrid p {
+    padding: 1rem;
+}
+
+.button-group {
+    display: flex; /* Alinea los botones en línea */
+    gap: 0.5rem; /* Espaciado entre los botones */
+    margin-left: 1rem; /* Espaciado entre los enlaces y el grupo de botones */
+}
+
+/* Botones de Iniciar Sesión y Regístrate */
+.menu-toggle {
+    background-color: #0078d7; /* Fondo azul */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 0.5rem 1rem; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+    margin: 0 0.5rem; /* Espaciado entre botones */
+    display: inline-block; /* Permite el espaciado entre botones */
+    text-align: center; /* Centra el texto dentro del botón */
+}
+
+.login-btn {
+    background-color: #439afd; /* Verde para Iniciar Sesión */
+}
+
+.login-btn:hover {
+    background-color: #2c76ca; /* Verde más oscuro al pasar el mouse */
+}
+
+.register-btn {
+    background-color: #439afd; /* Amarillo para Regístrate */
+}
+
+.register-btn:hover {
+    background-color: #2c76ca; /* Amarillo más oscuro al pasar el mouse */
+}
+
+.premium-btn {
+    background-color: rgba(0, 255, 255, 0);
+    border-color: #e6f7ff; /* Borde azul claro */
+    border-width: 2px; /* Ancho del borde */
+    border-style: solid; /* Estilo del borde */
+}
+
+.premium-btn:hover {
+    background-color: #2c76ca; /* Amarillo más oscuro al pasar el mouse */
+}
+
+/* Aside */
+aside {
+    background-color: #f9f9f9; /* Fondo claro */
+    border: 1px solid #ddd; /* Borde gris */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 1rem; /* Espaciado interno */
+    margin: 1rem 0; /* Espaciado externo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+    position: fixed; /* Mantiene el aside fijo en la pantalla */
+    top: 12%; /* Distancia desde la parte superior */
+    left: 1rem; /* Distancia desde la derecha */
+    width: 24%; /* Ancho fijo */
+    height: auto; /* Altura automática */
+    overflow-y: auto; /* Desplazamiento vertical si es necesario */
+    z-index: 1000; /* Asegura que el aside esté por encima de otros elementos */
+}
+
+aside h2 {
+    color: #005a9e; /* Color del título */
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+aside ul {
+    list-style: disc; /* Viñetas */
+    padding-left: 1.5rem; /* Espaciado a la izquierda */
+}
+
+aside li {
+    margin-bottom: 0.5rem; /* Espaciado entre elementos */
+    color: #333; /* Color del texto */
+}
+
+/* Main Content */
+main {
+    padding: 2rem;
+    background-color: white;
+    margin: 1rem auto;
+    max-width: 800px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Rutas Box */
+.rutas-box {
+    background-color: #e6f7ff; /* Fondo azul claro */
+    border: 1px solid #0078d7; /* Borde azul */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 1.5rem; /* Espaciado interno */
+    margin: 1rem 0; /* Espaciado externo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación */
+
+}
+
+.rutas-box:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+.rutas-box h2 {
+    margin-top: 0;
+    color: #005a9e; /* Color del título */
+    font-size: 1.5rem;
+}
+
+.rutas-box h3 {
+    color: #0078d7; /* Color del subtítulo */
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem; /* Espaciado inferior */
+}
+
+.rutas-box h4 {
+    color: #005a9e; /* Color del subtítulo */
+    font-size: 1rem;
+    margin-bottom: 0.5rem; /* Espaciado inferior */
+
+}
+
+.rutas-box p {
+    color: #333; /* Color del texto */
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.rutas-box img {
+    width: 100%; /* Imagen ocupa todo el ancho */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+    margin-bottom: 1rem; /* Espaciado inferior */
+}
+
+/* Estilo para la información de rutas */
+.rutas-info {
+    display: flex; /* Coloca los elementos en una fila */
+    justify-content: space-between; /* Espacia los elementos uniformemente */
+    align-items: center; /* Alinea verticalmente los elementos */
+    gap: 2rem; /* Espaciado entre los elementos */
+    font-family: Arial, sans-serif; /* Fuente limpia */
+    font-size: 1rem; /* Tamaño de fuente */
+    color: #333; /* Color del texto */
+    margin-top: 1rem; /* Espaciado superior */
+}
+
+.rutas-info div {
+    text-align: center; /* Centra el texto dentro de cada sección */
+}
+
+.rutas-info div span {
+    display: block; /* Cada línea ocupa su propio espacio */
+    font-weight: bold; /* Resalta los valores */
+    font-size: 1rem; /* Tamaño más grande para los valores */
+    color: #005a9e; /* Color azul para los valores */
+}
+
+.rutas-info div small {
+    font-size: 0.9rem; /* Tamaño más pequeño para las etiquetas */
+    color: #555; /* Color gris para las etiquetas */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    position: relative; /* Posición relativa para el footer */
+    bottom: 0; /* Asegura que el footer esté al final de la página */
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
