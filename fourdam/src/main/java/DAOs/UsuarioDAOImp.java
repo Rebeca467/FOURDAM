@@ -15,5 +15,4 @@ import reto.fourdam.Usuario;
  */
 public class UsuarioDAOImp {
     
-    
 }
