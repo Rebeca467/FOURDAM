@@ -191,6 +191,14 @@ public class Ruta {
         this.indicaciones = indicaciones;
     }
 
+    public String getTipoActividad() {
+        return tipoActividad;
+    }
+
+    public void setTipoActividad(String tipoActividad) {
+        this.tipoActividad = tipoActividad;
+    }
+
     public Temporada getTemporada() {
         return temporada;
     }
