@@ -36,8 +36,12 @@ Breve resumen del objetivo del proyecto, su funcionalidad principal y tecnologí
 ## Infografía Seguridad Social
 [Ver Infografias](./Infografía-seguridad-social.pdf)
 
+> Documento visual que resume de forma clara y gráfica los principales conceptos, beneficios y componentes del sistema de Seguridad Social.
+
 ## Subsidios de la Seguridad Social
 [Ver subsidios](./subsidios_SS.pdf)
+
+> Archivo que detalla los distintos tipos de subsidios disponibles dentro del sistema de Seguridad Social, incluyendo requisitos, duración y montos aproximados.
 
 ## Instalación
 ```bash
