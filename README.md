@@ -32,7 +32,7 @@ Breve resumen del objetivo del proyecto, su funcionalidad principal y tecnologí
 [Ver Infografias](./Infografía-seguridad-social.pdf)
 
 ## Subsidios de la Seguridad Social
-[Ver subsidios](./susbsidios-SS.pdf)
+[Ver subsidios](./subsidios-SS.pdf)
 
 ## Instalación
 ```bash
