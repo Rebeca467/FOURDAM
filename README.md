@@ -19,7 +19,7 @@ Breve resumen del objetivo del proyecto, su funcionalidad principal y tecnologí
 - Ana María Rodríguez Méndez  (@anarodriguezm)
 
 ## Diagrama Entidad-Relación (E/R)
-[Ver ell Diagrama E/R](./docs/diagrama-er.pdf)
+[Ver el Diagrama E/R](./docs/diagrama-er.pdf)
 
 > El diagrama muestra las entidades principales, sus relaciones y atributos clave en el sistema.
 
@@ -32,6 +32,12 @@ Breve resumen del objetivo del proyecto, su funcionalidad principal y tecnologí
 [Ver XSLT para generación de CSV](./xslt-csv.xslt)
 
 > La hoja de estilo XSLT define la transformación de un documento XML a formato CSV, especificando plantillas y reglas para recorrer y convertir los nodos del XML en registros delimitados por comas.
+
+## Infografía Seguridad Social
+[Ver Infografias](./Infografía-seguridad-social.pdf)
+
+## Subsidios de la Seguridad Social
+[Ver subsidios](./susbsidios-SS.pdf)
 
 ## Instalación
 ```bash

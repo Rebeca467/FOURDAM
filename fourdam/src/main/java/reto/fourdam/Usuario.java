@@ -4,38 +4,25 @@
  */
 package reto.fourdam;
 
-import ENUMs.TipoUsuario;
-
 /**
  *
- * @author DAM120
+ * @author DAM124
  */
-public class Usuario {
-    private String correo;
-    private String contraseña;
-    private TipoUsuario rol;
+public abstract class Usuario implements Valorar<Ruta>,Resennar<Ruta>{
+    private String nombre;
+    private String apellidos;
+    private String email;
+    private String cnna;
 
-    public Usuario(String correo, String contraseña) {
-        this.correo = correo;
-        this.contraseña = contraseña;
-        if(correo.equals("alumno")){
-           this.rol =TipoUsuario.ALUMNO; 
-        }
-        if(correo.equals("DiseñadorRutas")){
-           this.rol =TipoUsuario.DISENADOR_DE_RUTAS; 
-        }
-        if(correo.equals("admin")){
-           this.rol =TipoUsuario.ADMINISTRADOR; 
-        }
-        if(correo.equals("profesor")){
-           this.rol =TipoUsuario.PROFESOR; 
-        }  
+    public Usuario(String nombre, String apellidos, String email, String cnna) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.email = email;
+        this.cnna = cnna;
     }
-    public Usuario(){
-        this.correo="invitado";
-        this.contraseña="";
-        this.rol=TipoUsuario.INVITADO;
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "nombre=" + nombre + ", apellidos=" + apellidos + ", email=" + email + '}';
     }
-    
-    
 }
