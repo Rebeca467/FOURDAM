@@ -132,7 +132,7 @@ private Usuario usuario;
                     .addComponent(jButton4)
                     .addComponent(jButton5)
                     .addComponent(jButton2))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
