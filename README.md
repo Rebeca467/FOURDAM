@@ -5,9 +5,11 @@
 2. [Participantes](#participantes)
 3. [Diagrama Entidad-Relación (E/R)](#diagrama-entidad-relación-er)
 4. [Diagrama de Clases](#diagrama-de-clases)
-5. [Instalación](#instalación)
-6. [Uso](#uso)
-
+5. [XSLT](#xslt)
+6. [Infografía Seguridad Social](#infografía-seguridad-social)
+7. [Subsidios Seguridad Social](#subsidios-de-la-seguridad-social)
+8. [Instalación](#instalación)
+9. [Uso](#uso)
 ## Descripción del Proyecto
 Breve resumen del objetivo del proyecto, su funcionalidad principal y tecnologías utilizadas.
 
