@@ -33,6 +33,10 @@ public class Usuario{
         this.rol = TipoUsuario.INVITADO;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     @Override
     public String toString() {
         return "Usuario{" + "nombre=" + nombre + ", apellidos=" + apellidos + ", email=" + email + '}';
