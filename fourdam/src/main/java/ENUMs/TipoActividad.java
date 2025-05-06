@@ -8,6 +8,6 @@ package ENUMs;
  *
  * @author DAM120
  */
-public enum TipoUsuario{
-    ALUMNO,DISENADOR_DE_RUTAS,PROFESOR,ADMINISTRADOR,INVITADO
+public enum TipoActividad {
+    
 }
