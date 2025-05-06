@@ -4,6 +4,10 @@
  */
 package reto.fourdam;
 
+import ENUMs.ClasificacionRuta;
+import ENUMs.Estado;
+import ENUMs.Temporada;
+import ENUMs.TipoActividad;
 import java.io.File;
 import java.time.LocalDate;
 import java.time.LocalTime;
