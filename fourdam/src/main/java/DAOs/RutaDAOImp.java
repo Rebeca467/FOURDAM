@@ -19,18 +19,17 @@ import reto.fourdam.Ruta;
  *
  * @author DAM124
  */
-public class RutaDAOImp implements Repositorio<Ruta> {
+public class RutaDAOImp{
     
     private Connection getConnection() {
         return AccesoBaseDatos.getInstance().getConn();
     }
 
-    @Override
     public List<Ruta> listar() {
         List<Ruta> productos = new ArrayList<>();
         try ( Statement stmt = getConnection().createStatement();  ResultSet rs = stmt.executeQuery("SELECT id,nombre,cantidad FROM productos");) {
             while (rs.next()) {
-                Ruta ruta = null;//crearRuta(rs);
+                Ruta ruta = crearRuta(rs);
                 if (!productos.add(ruta)) {
                     throw new Exception("error no se ha insertado el objeto en la colección");
                 }
@@ -45,20 +44,7 @@ public class RutaDAOImp implements Repositorio<Ruta> {
         return productos;
     }
 
-    @Override
-    public Ruta porId(int id) {
-        return null;
+    private Ruta crearRuta(final ResultSet rs) throws SQLException {
+        return new Ruta( rs.getInt("id"),rs.getObject("id_usuario", int),rs.getInt("cantidad"));
     }
-
-    @Override
-    public void guardar(Ruta t) {
-    }
-
-    @Override
-    public void eliminar(int id) {
-    }
-    
-    /*private Ruta crearRuta(final ResultSet rs) throws SQLException {
-        return new Ruta( rs.getInt("id"),rs.getObject("id_usuario", Usuario),rs.getInt("cantidad"));
-    }*/
 }

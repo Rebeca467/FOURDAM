@@ -10,6 +10,7 @@ import ENUMs.Temporada;
 import java.io.File;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Set;
 
 /**
  *
@@ -27,22 +28,22 @@ public class Ruta {
     private float desnivel;
     private float altMax;
     private float altMin;
-    private ClasificacionRuta clasificacion;//Enum - Circular,Lineal -
+    private ClasificacionRuta clasificacion;
     private int nivelRiesgo;
     private int nivelEsfuerzo;
     private int tipoTerreno;
     private int indicaciones;
     private String tipoActividad;//Enum
-    private Temporada temporada;//Enum - Primavera,Verano,Otoño,Invierno -
+    private Set<String> temporada;
     private boolean accesibilidad;
     private boolean familiar;
     private String url;
-    private Estado estado;//Enum
+    private Estado estado;
     private String recomendaciones;
     private String zonaGeografica;
     private File puntosIntermedios;
 
-    public Ruta(int id, Usuario autor, String nombre, LocalDate fecha_creacion, PuntoInteres punto_ini, PuntoInteres punto_fin, float distanciaTotal, LocalTime duracion, float desnivel, float altMax, float altMin, ClasificacionRuta clasificacion, int nivelRiesgo, int nivelEsfuerzo, int tipoTerreno, int indicaciones, String tipoActividad, Temporada temporada, boolean accesibilidad, boolean familiar, String url, Estado estado, String recomendaciones, String zonaGeografica, File puntosIntermedios) {
+    public Ruta(int id, Usuario autor, String nombre, LocalDate fecha_creacion, PuntoInteres punto_ini, PuntoInteres punto_fin, float distanciaTotal, LocalTime duracion, float desnivel, float altMax, float altMin, ClasificacionRuta clasificacion, int nivelRiesgo, int nivelEsfuerzo, int tipoTerreno, int indicaciones, String tipoActividad, Set<String> temporada, boolean accesibilidad, boolean familiar, String url, Estado estado, String recomendaciones, String zonaGeografica, File puntosIntermedios) {
         this.id = id;
         this.autor = autor;
         this.nombre = nombre;
@@ -69,8 +70,8 @@ public class Ruta {
         this.zonaGeografica = zonaGeografica;
         this.puntosIntermedios = puntosIntermedios;
     }
-
     
+        
     public Usuario getAutor() {
         return autor;
     }
@@ -199,11 +200,11 @@ public class Ruta {
         this.tipoActividad = tipoActividad;
     }
 
-    public Temporada getTemporada() {
+    public Set<String> getTemporada() {
         return temporada;
     }
 
-    public void setTemporada(Temporada temporada) {
+    public void setTemporada(Set<String> temporada) {
         this.temporada = temporada;
     }
 
@@ -262,6 +263,9 @@ public class Ruta {
     public void setPuntosIntermedios(File puntosIntermedios) {
         this.puntosIntermedios = puntosIntermedios;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Ruta{" + "id=" + id + ", autor=" + autor + ", nombre=" + nombre + ", fecha_creacion=" + fecha_creacion + ", punto_ini=" + punto_ini + ", punto_fin=" + punto_fin + ", distanciaTotal=" + distanciaTotal + ", duracion=" + duracion + ", desnivel=" + desnivel + ", altMax=" + altMax + ", altMin=" + altMin + ", clasificacion=" + clasificacion + ", nivelRiesgo=" + nivelRiesgo + ", nivelEsfuerzo=" + nivelEsfuerzo + ", tipoTerreno=" + tipoTerreno + ", indicaciones=" + indicaciones + ", tipoActividad=" + tipoActividad + ", temporada=" + temporada + ", accesibilidad=" + accesibilidad + ", familiar=" + familiar + ", url=" + url + ", estado=" + estado + ", recomendaciones=" + recomendaciones + ", zonaGeografica=" + zonaGeografica + '}';
+    }
 }
