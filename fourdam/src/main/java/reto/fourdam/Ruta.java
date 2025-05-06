@@ -7,7 +7,6 @@ package reto.fourdam;
 import ENUMs.ClasificacionRuta;
 import ENUMs.Estado;
 import ENUMs.Temporada;
-import ENUMs.TipoActividad;
 import java.io.File;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -33,7 +32,7 @@ public class Ruta {
     private int nivelEsfuerzo;
     private int tipoTerreno;
     private int indicaciones;
-    private TipoActividad tipoActividad;//Enum
+    private String tipoActividad;//Enum
     private Temporada temporada;//Enum - Primavera,Verano,Otoño,Invierno -
     private boolean accesibilidad;
     private boolean familiar;
@@ -43,7 +42,7 @@ public class Ruta {
     private String zonaGeografica;
     private File puntosIntermedios;
 
-    public Ruta(int id, Usuario autor, String nombre, LocalDate fecha_creacion, PuntoInteres punto_ini, PuntoInteres punto_fin, float distanciaTotal, LocalTime duracion, float desnivel, float altMax, float altMin, ClasificacionRuta clasificacion, int nivelRiesgo, int nivelEsfuerzo, int tipoTerreno, int indicaciones, TipoActividad tipoActividad, Temporada temporada, boolean accesibilidad, boolean familiar, String url, Estado estado, String recomendaciones, String zonaGeografica, File puntosIntermedios) {
+    public Ruta(int id, Usuario autor, String nombre, LocalDate fecha_creacion, PuntoInteres punto_ini, PuntoInteres punto_fin, float distanciaTotal, LocalTime duracion, float desnivel, float altMax, float altMin, ClasificacionRuta clasificacion, int nivelRiesgo, int nivelEsfuerzo, int tipoTerreno, int indicaciones, String tipoActividad, Temporada temporada, boolean accesibilidad, boolean familiar, String url, Estado estado, String recomendaciones, String zonaGeografica, File puntosIntermedios) {
         this.id = id;
         this.autor = autor;
         this.nombre = nombre;
@@ -190,14 +189,6 @@ public class Ruta {
 
     public void setIndicaciones(int indicaciones) {
         this.indicaciones = indicaciones;
-    }
-
-    public TipoActividad getTipoActividad() {
-        return tipoActividad;
-    }
-
-    public void setTipoActividad(TipoActividad tipoActividad) {
-        this.tipoActividad = tipoActividad;
     }
 
     public Temporada getTemporada() {
