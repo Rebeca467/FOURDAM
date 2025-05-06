@@ -5,11 +5,13 @@
 2. [Participantes](#participantes)
 3. [Diagrama Entidad-Relación (E/R)](#diagrama-entidad-relación-er)
 4. [Diagrama de Clases](#diagrama-de-clases)
-5. [XSLT](#xslt)
-6. [Infografía Seguridad Social](#infografía-seguridad-social)
-7. [Subsidios Seguridad Social](#subsidios-de-la-seguridad-social)
-8. [Instalación](#instalación)
-9. [Uso](#uso)
+5. [Diagrama de Casos de Uso](#diagrama-de-casos-de-uso)
+6. [XSLT](#xslt)
+7. [Infografía Seguridad Social](#infografía-seguridad-social)
+8. [Subsidios Seguridad Social](#subsidios-de-la-seguridad-social)
+9. [Instalación](#instalación)
+10. [Uso](#uso)
+
 ## Descripción del Proyecto
 Breve resumen del objetivo del proyecto, su funcionalidad principal y tecnologías utilizadas.
 
@@ -29,6 +31,11 @@ Breve resumen del objetivo del proyecto, su funcionalidad principal y tecnologí
 [Ver Diagrama de Clases](./diagrama-clases.png)
 
 > El diagrama de clases ilustra la estructura del sistema orientado a objetos, incluyendo clases, métodos y relaciones de herencia o asociación.
+
+## Diagrama de Casos de Uso
+[Ver Diagrama de Casos](./diagrama_casos.png)
+
+> El diagrama de casos de uso representa las funcionalidades del sistema desde la perspectiva de los usuarios, mostrando qué acciones puede realizar cada actor y cómo interactúan con el sistema.
 
 ## XSLT 
 [Ver XSLT para generación de CSV](./xslt-csv.xslt)
