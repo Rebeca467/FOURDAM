@@ -2,14 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package reto.fourdam;
+package DAOs;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import reto.fourdam.AccesoBaseDatos;
+import reto.fourdam.Usuario;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import reto.fourdam.Ruta;
 
 /**
  *
