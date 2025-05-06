@@ -36,8 +36,12 @@ Breve resumen del objetivo del proyecto, su funcionalidad principal y tecnologí
 ## Infografía Seguridad Social
 [Ver Infografias](./Infografía-seguridad-social.pdf)
 
+> Documento visual que consta sobre multiples apartados de la Seguridad Social.
+
 ## Subsidios de la Seguridad Social
-[Ver subsidios](./susbsidios-SS.pdf)
+[Ver subsidios](./subsidios_SS.pdf)
+
+> Documento donde se presenta el cálculo de los subsidios de la Seguridad Social.
 
 ## Instalación
 ```bash
