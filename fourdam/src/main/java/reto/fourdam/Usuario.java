@@ -10,7 +10,7 @@ import ENUMs.TipoUsuario;
  *
  * @author DAM124
  */
-public abstract class Usuario implements Valorar<Ruta>,Resennar<Ruta>{
+public class Usuario{
     private String nombre;
     private String apellidos;
     private String email;
