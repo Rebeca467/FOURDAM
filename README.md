@@ -28,6 +28,11 @@ Breve resumen del objetivo del proyecto, su funcionalidad principal y tecnologí
 
 > El diagrama de clases ilustra la estructura del sistema orientado a objetos, incluyendo clases, métodos y relaciones de herencia o asociación.
 
+## XSLT 
+[Ver XSLT para generación de CSV](./xslt-csv.xslt)
+
+> La hoja de estilo XSLT define la transformación de un documento XML a formato CSV, especificando plantillas y reglas para recorrer y convertir los nodos del XML en registros delimitados por comas.
+
 ## Infografía Seguridad Social
 [Ver Infografias](./Infografía-seguridad-social.pdf)
 
