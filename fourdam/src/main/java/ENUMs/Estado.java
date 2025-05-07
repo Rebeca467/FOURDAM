@@ -9,5 +9,5 @@ package ENUMs;
  * @author DAM120
  */
 public enum Estado {
-    PENDIENTE,VALIDADA
+    
 }

@@ -24,8 +24,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Usuarios` (
   `correo` VARCHAR(45) NOT NULL,
   `contraseña` VARCHAR(45) NOT NULL,
   `rol` ENUM('DESARROLLADOR', 'ADMIISTRADOR', 'PROFESADOR', 'ALUMNO', 'INVITADO') NOT NULL,
-  PRIMARY KEY (`id_usuario`),
-  UNIQUE INDEX `correo_UNIQUE` (`correo` ASC) VISIBLE)
+  PRIMARY KEY (`id_usuario`))
 ENGINE = InnoDB;
 
 

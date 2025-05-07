@@ -13,7 +13,7 @@ import reto.fourdam.Usuario;
  *
  * @author DAM120
  */
-public class CrearRutas extends MenuBar{
+public class CrearRutas extends javax.swing.JFrame {
 private Usuario usuario;
     /**
      * Creates new form CrearRutas
