@@ -26,14 +26,14 @@ public class Fichero {
         linea += "Tipo;Latitud;Longitud;Elevación;Tiempo;Nombre\n";
         if (ruta.getPunto_ini() != null) {
             PuntoInteres ini = ruta.getPunto_ini();
-            linea += "waypoint;" + ini.getLatitud() + ";" + ini.getLongitud() + ";" + ini.getElevacion() + ";-;" + ini.getNombre() + "\n";
+//            linea += "waypoint;" + ini.getLatitud() + ";" + ini.getLongitud() + ";" + ini.getElevacion() + ";-;" + ini.getNombre() + "\n";
         }
         
         
         
         if (ruta.getPunto_fin() != null) {
             PuntoInteres fin = ruta.getPunto_fin();
-            linea += "waypoint;" + fin.getLatitud() + ";" + fin.getLongitud() + ";" + fin.getElevacion() + ";-;" + fin.getNombre() + "\n";
+//            linea += "waypoint;" + fin.getLatitud() + ";" + fin.getLongitud() + ";" + fin.getElevacion() + ";-;" + fin.getNombre() + "\n";
         }
         
         return linea;
@@ -62,8 +62,8 @@ public class Fichero {
                     double lon = Double.parseDouble(parts[2]);
                     float ele = Float.parseFloat(parts[3]);
                     String nombre = parts[5];
-                    PuntoInteres p = new PuntoInteres(nombre, lat, lon, ele);
-                    waypoints.add(p);
+//                    PuntoInteres p = new PuntoInteres(nombre, lat, lon, ele);
+//                    waypoints.add(p);
                 }
 
                 if (!waypoints.isEmpty()) {
