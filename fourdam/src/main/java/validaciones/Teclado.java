@@ -12,7 +12,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -116,35 +115,6 @@ public class Teclado {
         return tiempoString;
     }
     
-      public static LocalTime stringToLocalTime(String fecha) {
-        LocalDate fechaLocalDate = null;
-        try {
-            String trozos[] = fecha.split("/");
-            if (trozos.length == 3) {
-                int dia = Integer.parseInt(trozos[0]);
-                int mes = Integer.parseInt(trozos[1]);
-                int anio = Integer.parseInt(trozos[2]);
-                fechaLocalDate = LocalDate.of(anio, mes, dia);
-                if (fechaLocalDate.isAfter(LocalDate.now())) {
-                    throw new Exception("Fecha no válida.");
-                }
-            }
-        } catch (InputMismatchException e) {
-            System.out.println("Escribe un numero válido");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return fechaLocalDate;
-    }
-    
-    public static boolean validarCorreo(String correo) {
-        boolean exito = true;
-        if (!correo.matches("^[A-ZÑa-zñ_-]*@[A-ZÑa-zñ._-]*")) {
-            exito = false;
-        }
-        return exito;
-    }
-
     public static Set<String> validarTemporada(String texto) {
         List<String> temporadasValidas = List.of("primavera", "verano", "otoño", "invierno");
         boolean valido = false;
@@ -157,12 +127,12 @@ public class Teclado {
             for (String parte : partes) {
                 temporadas.add(parte.trim().toLowerCase());
             }
-
+            
             Set<String> noValidas = new LinkedHashSet<>(temporadas);
             noValidas.removeAll(temporadasValidas);
-
+            
             if (noValidas.isEmpty()) {
-
+                
                 if (comprobarOrden(temporadas, temporadasValidas)) {
                     valido = true;
                 } else {
@@ -174,7 +144,7 @@ public class Teclado {
         } while (!valido);
         return temporadas;
     }
-
+ 
     private static boolean comprobarOrden(Set<String> temporadas, List<String> ordenCorrecto) {
         int posicionAnterior = -1;
         boolean ordenado = true;
@@ -187,6 +157,4 @@ public class Teclado {
         }
         return ordenado;
     }
-
-    //fetch
 }

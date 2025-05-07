@@ -8,6 +8,20 @@ package reto.fourdam;
  *
  * @author DAM124
  */
-public class PuntoPeligro {
-    
+public class PuntoPeligro extends Punto{
+    private int km;
+    private int nivelgravedad;
+    private String justificacion;
+
+    public PuntoPeligro(double latitud, double longitud, String imagen, int km, int nivelgravedad, String justificacion) {
+        super(latitud, longitud, imagen);
+        this.km = km;
+        this.nivelgravedad = nivelgravedad;
+        this.justificacion = justificacion;
+    }
+
+    @Override
+    public String toString() {
+        return "PuntoPeligro{" + "km=" + km + ", nivelgravedad=" + nivelgravedad + ", justificacion=" + justificacion + '}';
+    }
 }
