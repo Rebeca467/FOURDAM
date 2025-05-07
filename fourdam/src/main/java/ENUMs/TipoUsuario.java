@@ -8,6 +8,6 @@ package ENUMs;
  *
  * @author DAM120
  */
-public enum Estado {
-    PENDIENTE,VALIDADA
+public enum TipoUsuario {
+    PROFESOR,DISENADOR_DE_RUTAS,ADMIN,ALUMNO,INVITADO
 }

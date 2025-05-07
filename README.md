@@ -4,15 +4,13 @@
 1. [Descripción del Proyecto](#descripción-del-proyecto)
 2. [Participantes](#participantes)
 3. [Diagrama Entidad-Relación (E/R)](#diagrama-entidad-relación-er)
-4. [Diagrama Relacional](#diagrama-relacional)
-5. [Script](#script-bd)
-6. [Diagrama de Clases](#diagrama-de-clases)
-7. [Diagrama de Casos de Uso](#diagrama-de-casos-de-uso)
-8. [XSLT](#xslt)
-9. [Infografía Seguridad Social](#infografía-seguridad-social)
-10. [Subsidios Seguridad Social](#subsidios-de-la-seguridad-social)
-11. [Instalación](#instalación)
-12. [Uso](#uso)
+4. [Diagrama de Clases](#diagrama-de-clases)
+5. [Diagrama de Casos de Uso](#diagrama-de-casos-de-uso)
+6. [XSLT](#xslt)
+7. [Infografía Seguridad Social](#infografía-seguridad-social)
+8. [Subsidios Seguridad Social](#subsidios-de-la-seguridad-social)
+9. [Instalación](#instalación)
+10. [Uso](#uso)
 
 ## Descripción del Proyecto
 Breve resumen del objetivo del proyecto, su funcionalidad principal y tecnologías utilizadas.
@@ -25,19 +23,9 @@ Breve resumen del objetivo del proyecto, su funcionalidad principal y tecnologí
 - Ana María Rodríguez Méndez  (@anarodriguezm)
 
 ## Diagrama Entidad-Relación (E/R)
-[Ver el Diagrama E/R](./diagrama_e-r.pdf)
+[Ver el Diagrama E/R](./docs/diagrama-er.pdf)
 
 > El diagrama muestra las entidades principales, sus relaciones y atributos clave en el sistema.
-
-## Diagrama Relacional
-[Ver el Diagrama Relacional](./diagramaRelacional-definitivo.mwb)
-
-> El diagrama muestra las entidades principales, sus relaciones y atributos clave en el sistema.
-
-## Script BD
-[Ver el Script](./bd-script-grupo4-definitivo.sql)
-
-> Aqui se puede ver el script de la base de datos.
 
 ## Diagrama de Clases
 [Ver Diagrama de Clases](./diagrama-clases.png)
