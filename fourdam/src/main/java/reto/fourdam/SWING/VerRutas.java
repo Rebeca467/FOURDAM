@@ -10,7 +10,7 @@ import reto.fourdam.Usuario;
  *
  * @author DAM120
  */
-public class VerRutas extends javax.swing.JFrame {
+public class VerRutas extends MenuBar {
 private Usuario usuario;
     /**
      * Creates new form VerRutas
@@ -132,14 +132,15 @@ private Usuario usuario;
                     .addComponent(jButton4)
                     .addComponent(jButton5)
                     .addComponent(jButton2))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        new Menu(usuario).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
