@@ -4,13 +4,16 @@
 1. [Descripción del Proyecto](#descripción-del-proyecto)
 2. [Participantes](#participantes)
 3. [Diagrama Entidad-Relación (E/R)](#diagrama-entidad-relación-er)
-4. [Diagrama de Clases](#diagrama-de-clases)
-5. [Diagrama de Casos de Uso](#diagrama-de-casos-de-uso)
-6. [XSLT](#xslt)
-7. [Infografía Seguridad Social](#infografía-seguridad-social)
-8. [Subsidios Seguridad Social](#subsidios-de-la-seguridad-social)
-9. [Instalación](#instalación)
-10. [Uso](#uso)
+4. [Diagrama Relacional](#diagrama-relacional)
+5. [Script BDD](#script-bdd)
+6. [Diagrama de Clases](#diagrama-de-clases)
+7. [Diagrama de Casos de Uso](#diagrama-de-casos-de-uso)
+8. [XSLT](#xslt)
+9. [Pagina web](#pagina-web)
+10. [Infografía Seguridad Social](#infografía-seguridad-social)
+11. [Subsidios Seguridad Social](#subsidios-de-la-seguridad-social)
+12. [Instalación](#instalación)
+13. [Uso](#uso)
 
 ## Descripción del Proyecto
 Breve resumen del objetivo del proyecto, su funcionalidad principal y tecnologías utilizadas.
@@ -23,9 +26,19 @@ Breve resumen del objetivo del proyecto, su funcionalidad principal y tecnologí
 - Ana María Rodríguez Méndez  (@anarodriguezm)
 
 ## Diagrama Entidad-Relación (E/R)
-[Ver el Diagrama E/R](./docs/diagrama-er.pdf)
+[Ver el Diagrama E/R](./diagrama-er.pdf)
 
 > El diagrama muestra las entidades principales, sus relaciones y atributos clave en el sistema.
+
+## Diagrama Relacional
+[Ver el Diagrama Relacional](diagramaRelacional-definitivo.mwb)
+
+> Representa las entidades, relaciones y atributos clave del sistema.
+
+## Script BDD
+[Ver el Script de bases de datos](bd-script-grupo4-definitivo.sql)
+
+> Contiene las instrucciones SQL para crear y estructurar la base de datos.
 
 ## Diagrama de Clases
 [Ver Diagrama de Clases](./diagrama-clases.png)
@@ -36,6 +49,11 @@ Breve resumen del objetivo del proyecto, su funcionalidad principal y tecnologí
 [Ver Diagrama de Casos](./diagrama_casos.png)
 
 > El diagrama de casos de uso representa las funcionalidades del sistema desde la perspectiva de los usuarios, mostrando qué acciones puede realizar cada actor y cómo interactúan con el sistema.
+
+## Pagina Web 
+[Ver la pagina web](./pagina%20web/index.html)
+
+> Interfaz web con diseño limpio y funcional para promocionar la aplicacion.
 
 ## XSLT 
 [Ver XSLT para generación de CSV](./xslt-csv.xslt)
