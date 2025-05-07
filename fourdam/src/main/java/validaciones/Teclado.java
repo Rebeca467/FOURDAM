@@ -8,7 +8,10 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.InputMismatchException;
+import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 /**
  *
@@ -130,4 +133,6 @@ public class Teclado {
         }
         return ordenado;
     }
+    
+    
 }
