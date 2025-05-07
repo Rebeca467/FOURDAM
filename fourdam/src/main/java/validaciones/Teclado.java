@@ -88,5 +88,46 @@ public class Teclado {
         return tiem;
     }
     
-    
+    public static Set<String> validarTemporada(String texto) {
+        List<String> temporadasValidas = List.of("primavera", "verano", "otoño", "invierno");
+        boolean valido = false;
+        Set<String> temporadas = new LinkedHashSet<>();
+        System.out.println(texto);
+        do {
+            String temp = new Scanner(System.in).nextLine();
+            temporadas.clear();
+            String[] partes = temp.split(",");
+            for (String parte : partes) {
+                temporadas.add(parte.trim().toLowerCase());
+            }
+            
+            Set<String> noValidas = new LinkedHashSet<>(temporadas);
+            noValidas.removeAll(temporadasValidas);
+            
+            if (noValidas.isEmpty()) {
+                
+                if (comprobarOrden(temporadas, temporadasValidas)) {
+                    valido = true;
+                } else {
+                    System.out.println("ERROR: debes introducir las temporadas en orden");
+                }
+            } else {
+                System.out.println("ERROR: temporada no valida (primavera,verano,otono,invierno)");
+            }
+        } while (!valido);
+        return temporadas;
+    }
+ 
+    private static boolean comprobarOrden(Set<String> temporadas, List<String> ordenCorrecto) {
+        int posicionAnterior = -1;
+        boolean ordenado = true;
+        for (String temporada : temporadas) {
+            int posicionActual = ordenCorrecto.indexOf(temporada);
+            if (posicionActual < posicionAnterior) {
+                ordenado = false;
+            }
+            posicionAnterior = posicionActual;
+        }
+        return ordenado;
+    }
 }
