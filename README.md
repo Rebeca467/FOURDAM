@@ -15,7 +15,7 @@
 12. [Uso](#uso)
 
 ## Descripción del Proyecto
-Breve resumen del objetivo del proyecto, su funcionalidad principal y tecnologías utilizadas.
+Resumen del objetivo del proyecto, su funcionalidad principal y tecnologías utilizadas.
 
 ## Participantes
 - Rebeca Cabo Cianca  (@Rebeca467)
