@@ -29,13 +29,18 @@ public class Usuario{
         this.nombre ="Invitado";
         this.apellidos = "";
         this.email = "";
-        this.cnna = cnna;
+        this.cnna = "";
         this.rol = TipoUsuario.INVITADO;
     }
 
     public String getNombre() {
         return nombre;
     }
+
+    public TipoUsuario getRol() {
+        return rol;
+    }
+    
 
     @Override
     public String toString() {
