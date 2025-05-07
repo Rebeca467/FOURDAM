@@ -12,6 +12,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,18 +20,19 @@ import java.util.Set;
  */
 public class Teclado {
 
+    // metodo que valida los textos
     public static String texto(String mensaje) {
         Scanner teclado = new Scanner(System.in);
-        boolean exito=false;
+        boolean exito = false;
         String texto = "";
         try {
-            while(!exito){
-            System.out.println(mensaje);
-            texto = teclado.nextLine();
-            if (!texto.matches("[A-Z a-z 0-9]*")) {
-                throw new Exception("No has introducido correctamente el texto");
-            }
-            exito=true;
+            while (!exito) {
+                System.out.println(mensaje);
+                texto = teclado.nextLine();
+                if (!texto.matches("[A-Z a-z 0-9]*")) {
+                    throw new Exception("No has introducido correctamente el texto");
+                }
+                exito = true;
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -38,59 +40,111 @@ public class Teclado {
         return texto;
     }
 
+    // metodo que valida los intervalos
     public static int intervalos(String mensaje, int inicio, int fin) {
         Scanner teclado = new Scanner(System.in);
         boolean exito = false;
         int num = 0;
-        try{
-            while(!exito){
+        try {
+            while (!exito) {
                 System.out.println(mensaje);
-                num= teclado.nextInt();
-                if(num<inicio||num>fin){
+                num = teclado.nextInt();
+                if (num < inicio || num > fin) {
                     throw new Exception("Introduce un numero válido");
                 }
-                exito=true;
+                exito = true;
             }
-        } catch (InputMismatchException e){
+        } catch (InputMismatchException e) {
             System.out.println("Debes meter un numero ");
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return num;
     }
-    
-    public static int numeros (String mensaje){
-         Scanner teclado = new Scanner(System.in);
+
+    // metodo que valida que no se puedan meter letras
+    public static double numeros(String mensaje) {
+        Scanner teclado = new Scanner(System.in);
         boolean exito = false;
-        int num = 0;
-        try{
-            while(!exito){
+        double num = 0;
+        try {
+            while (!exito) {
                 System.out.println(mensaje);
-                num= teclado.nextInt();
-                exito=true;
+                num = teclado.nextDouble();
+                exito = true;
             }
-        } catch (InputMismatchException e){
+        } catch (InputMismatchException e) {
             System.out.println("Debes meter un numero ");
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return num;
     }
-    
-    public static String formatoFecha (LocalDate fecha){
-        String fech = "";
-        DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        fech = fecha.format(f);
-        return fech;
+
+    public static String localDateToString(LocalDate fecha) {
+        String fechaString = "";
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        fechaString = fecha.format(formato);
+        return fechaString;
+    }
+
+    public static LocalDate stringToLocalDate(String fecha) {
+        LocalDate fechaLocalDate = null;
+        try {
+            String trozos[] = fecha.split("/");
+            if (trozos.length == 3) {
+                int dia = Integer.parseInt(trozos[0]);
+                int mes = Integer.parseInt(trozos[1]);
+                int anio = Integer.parseInt(trozos[2]);
+                fechaLocalDate = LocalDate.of(anio, mes, dia);
+                if (fechaLocalDate.isAfter(LocalDate.now())) {
+                    throw new Exception("Fecha no válida.");
+                }
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Escribe un numero válido");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return fechaLocalDate;
     }
     
-    public static String formatoTiempo (LocalTime tiempo){
-        String tiem = "";
-        DateTimeFormatter t = DateTimeFormatter.ofPattern("hh:mm:ss");
-        tiem = tiempo.format(t);
-        return tiem;
+    public static String localTimeToString(LocalTime tiempo) {
+        String tiempoString = "";
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("hh:mm:ss");
+        tiempoString = tiempo.format(formato);
+        return tiempoString;
     }
     
+      public static LocalTime stringToLocalTime(String fecha) {
+        LocalDate fechaLocalDate = null;
+        try {
+            String trozos[] = fecha.split("/");
+            if (trozos.length == 3) {
+                int dia = Integer.parseInt(trozos[0]);
+                int mes = Integer.parseInt(trozos[1]);
+                int anio = Integer.parseInt(trozos[2]);
+                fechaLocalDate = LocalDate.of(anio, mes, dia);
+                if (fechaLocalDate.isAfter(LocalDate.now())) {
+                    throw new Exception("Fecha no válida.");
+                }
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Escribe un numero válido");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return fechaLocalDate;
+    }
+    
+    public static boolean validarCorreo(String correo) {
+        boolean exito = true;
+        if (!correo.matches("^[A-ZÑa-zñ_-]*@[A-ZÑa-zñ._-]*")) {
+            exito = false;
+        }
+        return exito;
+    }
+
     public static Set<String> validarTemporada(String texto) {
         List<String> temporadasValidas = List.of("primavera", "verano", "otoño", "invierno");
         boolean valido = false;
@@ -103,12 +157,12 @@ public class Teclado {
             for (String parte : partes) {
                 temporadas.add(parte.trim().toLowerCase());
             }
-            
+
             Set<String> noValidas = new LinkedHashSet<>(temporadas);
             noValidas.removeAll(temporadasValidas);
-            
+
             if (noValidas.isEmpty()) {
-                
+
                 if (comprobarOrden(temporadas, temporadasValidas)) {
                     valido = true;
                 } else {
@@ -120,7 +174,7 @@ public class Teclado {
         } while (!valido);
         return temporadas;
     }
- 
+
     private static boolean comprobarOrden(Set<String> temporadas, List<String> ordenCorrecto) {
         int posicionAnterior = -1;
         boolean ordenado = true;
@@ -133,6 +187,6 @@ public class Teclado {
         }
         return ordenado;
     }
-    
+
     //fetch
 }
