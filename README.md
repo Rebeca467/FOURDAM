@@ -1,4 +1,4 @@
-# DAM1_GRUPO4_2025
+# FOURDAM
 
 ## Índice
 1. [Descripción del Proyecto](#descripción-del-proyecto)
@@ -41,12 +41,12 @@ Resumen del objetivo del proyecto, su funcionalidad principal y tecnologías uti
 > Contiene las instrucciones SQL para crear y estructurar la base de datos.
 
 ## Diagrama de Clases
-[Ver Diagrama de Clases](./diagrama_clases-def.png)
+![Ver Diagrama de Clases](./diagrama_clases-def.png)
 
 > El diagrama de clases ilustra la estructura del sistema orientado a objetos, incluyendo clases, métodos y relaciones de herencia o asociación.
 
 ## Diagrama de Casos de Uso
-[Ver Diagrama de Casos](./casos_uso_def.png)
+![Ver Diagrama de Casos](./casos_uso_def.png)
 
 > El diagrama de casos de uso representa las funcionalidades del sistema desde la perspectiva de los usuarios, mostrando qué acciones puede realizar cada actor y cómo interactúan con el sistema.
 
