@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - Rutas al Aire Libre</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Contáctanos</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="rutas.html">Rutas</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <div class="button-group">
+      <button class="login-btn">Iniciar Sesión</button>
+      <button class="register-btn">Regístrate</button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="rutas-box">
+      <h2>Envíanos un mensaje</h2>
+      <p>¿Tienes alguna pregunta o sugerencia? Completa el siguiente formulario y te responderemos lo antes posible.</p>
+
+      <form action="#" method="POST" class="contact-form">
+        <div style="display: grid; gap: 1rem;">
+          <label>
+            Nombre completo:<br />
+            <input type="text" name="nombre" required placeholder="Tu nombre" />
+          </label>
+
+          <label>
+            Correo electrónico:<br />
+            <input type="email" name="email" required placeholder="tucorreo@ejemplo.com" />
+          </label>
+
+          <label>
+            Asunto:<br />
+            <input type="text" name="asunto" required placeholder="Asunto del mensaje" />
+          </label>
+
+          <label>
+            Mensaje:<br />
+            <textarea name="mensaje" rows="6" required placeholder="Escribe tu mensaje aquí..."></textarea>
+          </label>
+
+          <button type="submit" class="menu-toggle">Enviar mensaje</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rutas de Montaña. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

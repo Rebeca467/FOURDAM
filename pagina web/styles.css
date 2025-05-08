@@ -1,285 +1,293 @@
-/* General Styles */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+:root {
+  --color-primary: #0078d7;
+  --color-secondary: #005a9e;
+  --color-accent: #e6f7ff;
+  --color-text: #333;
+  --color-light: #f4f4f4;
+  --color-dark: #111;
+  --font-main: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  --border-radius: 8px;
+  --transition-fast: 0.3s;
+  --shadow-light: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: var(--font-main);
+  background: linear-gradient(to bottom, #f4f4f4, #fff);
+  color: var(--color-text);
+  line-height: 1.6;
+  padding: 1rem;
 }
 
-/* Header */
+
 header {
-    background-color: #0078d7;
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: var(--shadow-light);
 }
-
 header h1 {
-    margin: 0;
-    font-size: 2rem;
+  font-size: 2.5rem;
 }
 
-/* Navigation */
+
 nav {
-    background-color: #005a9e;
-    padding: 0.5rem 1rem; /* Espaciado interno */
-    display: flex; /* Activa Flexbox */
-    align-items: center; /* Alinea verticalmente los elementos */
-    justify-content: space-between; /* Espacia los elementos principales */
+  background-color: var(--color-secondary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  flex-wrap: wrap;
 }
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 1rem;
-    font-weight: bold;
-}
-
 nav ul {
-    list-style: none; /* Quita las viñetas */
-    margin: 0; /* Elimina el margen */
-    padding: 0; /* Elimina el relleno */
-    display: flex; /* Muestra los elementos en línea */
-    gap: 1rem; /* Espaciado entre los enlaces */
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: white;
+  transition: width var(--transition-fast);
+}
+nav a:hover {
+  color: var(--color-accent);
+}
+nav a:hover::after {
+  width: 100%;
 }
 
-nav a:hover {
-    text-decoration: none;
-    color: #e6f7ff; /* Color de texto al pasar el mouse */
-    transition: color 0.3s ease; /* Transición suave */
+
+button,
+.menu-toggle,
+.login-btn,
+.register-btn,
+.premium-btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-weight: 500;
 }
+.menu-toggle,
+.login-btn,
+.register-btn {
+  background-color: var(--color-primary);
+  color: white;
+}
+.login-btn:hover,
+.register-btn:hover {
+  background-color: var(--color-secondary);
+}
+.premium-btn {
+  background-color: transparent;
+  border: 2px solid var(--color-accent);
+  color: white;
+}
+.premium-btn:hover {
+  background-color: var(--color-accent);
+  color: var(--color-secondary);
+}
+
 
 .search-bar {
-    display: flex;
-    gap: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 .search-bar input {
-    padding: 0.5rem;
-    font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #ccc;
 }
 .search-bar button {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
+  background-color: var(--color-primary);
+  color: white;
 }
+
 
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
 }
+
+
 .rutas-boxgrid {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.rutas-boxgrid:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-medium);
 }
 .rutas-boxgrid img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
+  filter: grayscale(10%) contrast(105%);
 }
 .rutas-boxgrid h3 {
-    margin: 0;
-    padding: 1rem;
-    background-color: #f4f4f4;
+  padding: 1rem;
+  background-color: var(--color-light);
 }
 .rutasbox-info {
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem;
-    background-color: #f9f9f9;
+  display: flex;
+  justify-content: space-around;
+  background-color: #f9f9f9;
+  padding: 1rem;
 }
 .rutasbox-info div {
-    text-align: center;
+  text-align: center;
 }
 .rutas-boxgrid p {
-    padding: 1rem;
+  padding: 1rem;
 }
 
-.button-group {
-    display: flex; /* Alinea los botones en línea */
-    gap: 0.5rem; /* Espaciado entre los botones */
-    margin-left: 1rem; /* Espaciado entre los enlaces y el grupo de botones */
-}
 
-/* Botones de Iniciar Sesión y Regístrate */
-.menu-toggle {
-    background-color: #0078d7; /* Fondo azul */
-    color: white; /* Texto blanco */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    padding: 0.5rem 1rem; /* Espaciado interno */
-    font-size: 1rem; /* Tamaño de fuente */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
-    margin: 0 0.5rem; /* Espaciado entre botones */
-    display: inline-block; /* Permite el espaciado entre botones */
-    text-align: center; /* Centra el texto dentro del botón */
-}
-
-.login-btn {
-    background-color: #439afd; /* Verde para Iniciar Sesión */
-}
-
-.login-btn:hover {
-    background-color: #2c76ca; /* Verde más oscuro al pasar el mouse */
-}
-
-.register-btn {
-    background-color: #439afd; /* Amarillo para Regístrate */
-}
-
-.register-btn:hover {
-    background-color: #2c76ca; /* Amarillo más oscuro al pasar el mouse */
-}
-
-.premium-btn {
-    background-color: rgba(0, 255, 255, 0);
-    border-color: #e6f7ff; /* Borde azul claro */
-    border-width: 2px; /* Ancho del borde */
-    border-style: solid; /* Estilo del borde */
-}
-
-.premium-btn:hover {
-    background-color: #2c76ca; /* Amarillo más oscuro al pasar el mouse */
-}
-
-/* Aside */
 aside {
-    background-color: #f9f9f9; /* Fondo claro */
-    border: 1px solid #ddd; /* Borde gris */
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 1rem; /* Espaciado interno */
-    margin: 1rem 0; /* Espaciado externo */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
-    position: fixed; /* Mantiene el aside fijo en la pantalla */
-    top: 12%; /* Distancia desde la parte superior */
-    left: 1rem; /* Distancia desde la derecha */
-    width: 24%; /* Ancho fijo */
-    height: auto; /* Altura automática */
-    overflow-y: auto; /* Desplazamiento vertical si es necesario */
-    z-index: 1000; /* Asegura que el aside esté por encima de otros elementos */
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  box-shadow: var(--shadow-light);
+  position: fixed;
+  top: 24%;
+  left: 1rem;
+  width: 22%;
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 10;
 }
-
 aside h2 {
-    color: #005a9e; /* Color del título */
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+  color: var(--color-secondary);
 }
-
 aside ul {
-    list-style: disc; /* Viñetas */
-    padding-left: 1.5rem; /* Espaciado a la izquierda */
+  padding-left: 1.5rem;
 }
-
 aside li {
-    margin-bottom: 0.5rem; /* Espaciado entre elementos */
-    color: #333; /* Color del texto */
+  margin-bottom: 0.5rem;
 }
 
-/* Main Content */
+
 main {
-    padding: 2rem;
-    background-color: white;
-    margin: 1rem auto;
-    max-width: 800px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
 }
 
-/* Rutas Box */
+
 .rutas-box {
-    background-color: #e6f7ff; /* Fondo azul claro */
-    border: 1px solid #0078d7; /* Borde azul */
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 1.5rem; /* Espaciado interno */
-    margin: 1rem 0; /* Espaciado externo */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación */
-
+  background-color: var(--color-accent);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-medium);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
-
 .rutas-box:hover {
-    transform: translateY(-5px); /* Efecto de elevación */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
-
-.rutas-box h2 {
-    margin-top: 0;
-    color: #005a9e; /* Color del título */
-    font-size: 1.5rem;
-}
-
-.rutas-box h3 {
-    color: #0078d7; /* Color del subtítulo */
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem; /* Espaciado inferior */
-}
-
-.rutas-box h4 {
-    color: #005a9e; /* Color del subtítulo */
-    font-size: 1rem;
-    margin-bottom: 0.5rem; /* Espaciado inferior */
-
-}
-
-.rutas-box p {
-    color: #333; /* Color del texto */
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
 .rutas-box img {
-    width: 100%; /* Imagen ocupa todo el ancho */
-    height: auto; /* Mantiene la proporción de la imagen */
-    border-radius: 8px; /* Bordes redondeados para la imagen */
-    margin-bottom: 1rem; /* Espaciado inferior */
+  width: 100%;
+  border-radius: var(--border-radius);
+  filter: brightness(0.95) saturate(1.1);
+  margin-bottom: 1rem;
+}
+.rutas-box h2,
+.rutas-box h3,
+.rutas-box h4 {
+  margin-bottom: 0.5rem;
+}
+.rutas-box h2 {
+  color: var(--color-secondary);
+}
+.rutas-box h3 {
+  color: var(--color-primary);
+}
+.rutas-box h4 {
+  color: var(--color-secondary);
+}
+.rutas-box p {
+  font-size: 1rem;
 }
 
-/* Estilo para la información de rutas */
+
 .rutas-info {
-    display: flex; /* Coloca los elementos en una fila */
-    justify-content: space-between; /* Espacia los elementos uniformemente */
-    align-items: center; /* Alinea verticalmente los elementos */
-    gap: 2rem; /* Espaciado entre los elementos */
-    font-family: Arial, sans-serif; /* Fuente limpia */
-    font-size: 1rem; /* Tamaño de fuente */
-    color: #333; /* Color del texto */
-    margin-top: 1rem; /* Espaciado superior */
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 1rem;
 }
-
 .rutas-info div {
-    text-align: center; /* Centra el texto dentro de cada sección */
+  text-align: center;
 }
-
 .rutas-info div span {
-    display: block; /* Cada línea ocupa su propio espacio */
-    font-weight: bold; /* Resalta los valores */
-    font-size: 1rem; /* Tamaño más grande para los valores */
-    color: #005a9e; /* Color azul para los valores */
+  font-weight: bold;
+  color: var(--color-secondary);
 }
-
 .rutas-info div small {
-    font-size: 0.9rem; /* Tamaño más pequeño para las etiquetas */
-    color: #555; /* Color gris para las etiquetas */
+  font-size: 0.9rem;
+  color: #555;
 }
 
-/* Footer */
+
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
-    position: relative; /* Posición relativa para el footer */
-    bottom: 0; /* Asegura que el footer esté al final de la página */
+  background-color: var(--color-dark);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
 }
-
 footer p {
-    margin: 0;
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
+
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  aside {
+    position: static;
+    width: 100%;
+    margin: 1rem 0;
+  }
+  .rutas-info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
