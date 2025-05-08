@@ -55,7 +55,7 @@ Resumen del objetivo del proyecto, su funcionalidad principal y tecnologías uti
 > La hoja de estilo XSLT define la transformación de un documento XML a formato CSV, especificando plantillas y reglas para recorrer y convertir los nodos del XML en registros delimitados por comas.
 
 ## Infografía Seguridad Social
-[Ver Infografias](./Infografía-seguridad-social.pdf)
+[Ver Infografias](./info-seguridad-social.pdf)
 
 > Documento visual que consta sobre multiples apartados de la Seguridad Social.
 
