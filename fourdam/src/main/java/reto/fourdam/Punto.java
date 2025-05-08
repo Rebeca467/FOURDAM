@@ -11,10 +11,12 @@ package reto.fourdam;
 public class Punto {
     private double latitud;
     private double longitud;
+    private String imagen;
 
-    public Punto(double latitud, double longitud) {
+    public Punto(double latitud, double longitud, String imagen) {
         this.latitud = latitud;
         this.longitud = longitud;
+        this.imagen = imagen;
     }
 
     public double getLatitud() {
@@ -23,6 +25,10 @@ public class Punto {
 
     public double getLongitud() {
         return longitud;
+    }
+
+    public String getImagen() {
+        return imagen;
     }
 
     @Override
