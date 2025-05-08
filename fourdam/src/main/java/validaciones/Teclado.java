@@ -12,6 +12,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -34,7 +35,7 @@ public class Teclado {
                 exito = true;
             }
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null,"Error: "+e.getMessage());
         }
         return texto;
     }
@@ -56,7 +57,7 @@ public class Teclado {
         } catch (InputMismatchException e) {
             System.out.println("Debes meter un numero ");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null,"Error: "+e.getMessage());
         }
         return num;
     }
@@ -75,7 +76,7 @@ public class Teclado {
         } catch (InputMismatchException e) {
             System.out.println("Debes meter un numero ");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+           JOptionPane.showMessageDialog(null,"Error: "+e.getMessage());
         }
         return num;
     }
@@ -103,7 +104,7 @@ public class Teclado {
         } catch (InputMismatchException e) {
             System.out.println("Escribe un numero válido");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null,"Error: "+e.getMessage());
         }
         return fechaLocalDate;
     }
@@ -136,10 +137,10 @@ public class Teclado {
                 if (comprobarOrden(temporadas, temporadasValidas)) {
                     valido = true;
                 } else {
-                    System.out.println("ERROR: debes introducir las temporadas en orden");
+                    JOptionPane.showMessageDialog(null,"ERROR: debes introducir las temporadas en orden");
                 }
             } else {
-                System.out.println("ERROR: temporada no valida (primavera,verano,otono,invierno)");
+                JOptionPane.showMessageDialog(null,"ERROR: temporada no valida (primavera,verano,otono,invierno)");                
             }
         } while (!valido);
         return temporadas;
