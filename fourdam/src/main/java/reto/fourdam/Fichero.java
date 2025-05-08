@@ -105,7 +105,7 @@ public class Fichero {
 
                         TipoPInteres tipo = TipoPInteres.valueOf(tipoStr.toUpperCase());
 
-                        PuntoInteres punto = new PuntoInteres(lat, lon, tipo, nombre);
+                        PuntoInteres punto = new PuntoInteres(lat, lon, "imagen.jpg", tipo, nombre);
                         waypoints.add(punto);
                     }
                 }
