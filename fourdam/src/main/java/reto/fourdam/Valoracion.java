@@ -14,5 +14,16 @@ public class Valoracion {
     private Usuario usuario;
     private Ruta ruta;
     private LocalDate fecha;
-    private String comentario;
+    private int dificultad;
+    private int belleza;
+    private int interesCultural;
+
+    public Valoracion(Usuario usuario, Ruta ruta, LocalDate fecha, int dificultad, int belleza, int interesCultural) {
+        this.usuario = usuario;
+        this.ruta = ruta;
+        this.fecha = fecha;
+        this.dificultad = dificultad;
+        this.belleza = belleza;
+        this.interesCultural = interesCultural;
+    }
 }

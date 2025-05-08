@@ -14,5 +14,12 @@ public class Resenna {
     private Usuario usuario;
     private Ruta ruta;
     private LocalDate fecha;
-    
+    private String comentario;
+
+    public Resenna(Usuario usuario, Ruta ruta, LocalDate fecha, String comentario) {
+        this.usuario = usuario;
+        this.ruta = ruta;
+        this.fecha = fecha;
+        this.comentario = comentario;
+    }  
 }
