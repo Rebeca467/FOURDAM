@@ -5,6 +5,8 @@
 package reto.fourdam;
 
 import ENUMs.TipoUsuario;
+import java.time.LocalDate;
+import validaciones.Teclado;
 
 /**
  *
@@ -18,6 +20,7 @@ public class Usuario{
     private String cnna;
     private TipoUsuario rol;
 
+
     public Usuario(int id,String nombre, String apellidos, String email, String cnna,TipoUsuario rol) {
         this.id=id;
         this.nombre = nombre;
@@ -28,7 +31,7 @@ public class Usuario{
 
     }
     public Usuario(String nombre, String apellidos, String email, String cnna,TipoUsuario rol) {
-        
+        this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.email = email;
@@ -52,6 +55,9 @@ public class Usuario{
         return rol;
     }
     
+    public Resenna resennar(Ruta ruta){
+        return new Resenna(Usuario.this, ruta, LocalDate.now(), Teclado.texto("Comentario respecto a la ruta"));
+    }
 
     @Override
     public String toString() {

@@ -14,5 +14,14 @@ public class ValoracionTec {
     private Usuario usuario;
     private Ruta ruta;
     private LocalDate fecha;
-    private String comentario;
+    private int dificultad;
+    private String equipoRecomendado;
+
+    public ValoracionTec(Usuario usuario, Ruta ruta, LocalDate fecha, int dificultad, String equipoRecomendado) {
+        this.usuario = usuario;
+        this.ruta = ruta;
+        this.fecha = fecha;
+        this.dificultad = dificultad;
+        this.equipoRecomendado = equipoRecomendado;
+    }    
 }
