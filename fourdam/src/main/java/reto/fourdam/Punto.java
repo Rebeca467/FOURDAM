@@ -8,15 +8,13 @@ package reto.fourdam;
  *
  * @author DAM106
  */
-public abstract class Punto {
+public class Punto {
     private double latitud;
     private double longitud;
-    private String imagen;
 
-    public Punto(double latitud, double longitud,  String imagen) {
+    public Punto(double latitud, double longitud) {
         this.latitud = latitud;
         this.longitud = longitud;
-        this.imagen = imagen;
     }
 
     public double getLatitud() {
@@ -27,12 +25,8 @@ public abstract class Punto {
         return longitud;
     }
 
-    public String getImagen() {
-        return imagen;
-    }
-
     @Override
     public String toString() {
-        return "Punto{" + "latitud=" + latitud + ", longitud=" + longitud + ", imagen=" + imagen + '}';
+        return "Punto{" + "latitud=" + latitud + ", longitud=" + longitud + '}';
     }
 }

@@ -4,6 +4,8 @@
  */
 package reto.fourdam;
 
+import ENUMs.TipoPInteres;
+
 /**
  *
  * @author DAM124
@@ -12,16 +14,13 @@ public class PuntoInteres extends Punto {
     private TipoPInteres tipo;
     private String caracteristicasEsp;
 
-    public PuntoInteres(double latitud, double longitud, String imagen, TipoPInteres tipo, String caracteristicasEsp) {
-        super(latitud,longitud, imagen);
+    public PuntoInteres(double latitud, double longitud, TipoPInteres tipo, String caracteristicasEsp) {
+        super(latitud,longitud);
         this.tipo = tipo;
         this.caracteristicasEsp = caracteristicasEsp;
     }
 
-    @Override
-    public String getImagen() {
-        return super.getImagen();
-    }
+    
 
     @Override
     public double getLatitud() {

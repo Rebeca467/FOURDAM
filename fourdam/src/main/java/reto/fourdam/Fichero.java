@@ -4,6 +4,7 @@
  */
 package reto.fourdam;
 
+import ENUMs.TipoPInteres;
 import ENUMs.TipoUsuario;
 import java.io.BufferedReader;
 import java.io.File;
@@ -30,12 +31,12 @@ public class Fichero {
         linea += ruta.getNombre() + ";" + ruta.getAutor().getNombre() + ";" + ruta.getUrl() + "\n";
         linea += "Tipo;Latitud;Longitud;Elevación;Tiempo;Nombre\n";
         if (ruta.getPunto_ini() != null) {
-            PuntoInteres ini = ruta.getPunto_ini();
+            Punto ini = ruta.getPunto_ini();
             linea += "waypoint;" + ini.getLatitud() + ";" + ini.getLongitud() + ";" + ruta.getNombre() + "\n";
         }
 
         if (ruta.getPunto_fin() != null) {
-            PuntoInteres fin = ruta.getPunto_fin();
+            Punto fin = ruta.getPunto_fin();
             linea += "waypoint;" + fin.getLatitud() + ";" + fin.getLongitud() + ";" + ruta.getNombre() + "\n";
         }
 
@@ -104,7 +105,7 @@ public class Fichero {
 
                         TipoPInteres tipo = TipoPInteres.valueOf(tipoStr.toUpperCase());
 
-                        PuntoInteres punto = new PuntoInteres(lat, lon, "sin_imagen.jpg", tipo, nombre);
+                        PuntoInteres punto = new PuntoInteres(lat, lon, tipo, nombre);
                         waypoints.add(punto);
                     }
                 }

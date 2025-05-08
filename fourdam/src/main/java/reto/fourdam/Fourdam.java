@@ -16,5 +16,7 @@ public class Fourdam {
     public static void main(String[] args) {
         new LogIn().setVisible(true);
         Connection conn = AccesoBaseDatos.getInstance().getConn();
+        System.out.println("hola");
     }
+    
 }
