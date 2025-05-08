@@ -40,7 +40,7 @@ Resumen del objetivo del proyecto, su funcionalidad principal y tecnologías uti
 > Aqui se puede ver el script de la base de datos.
 
 ## Diagrama de Clases
-[Ver Diagrama de Clases](./diagrama-clases.png)
+[Ver Diagrama de Clases](./diagrama_clases-def.png)
 
 > El diagrama de clases ilustra la estructura del sistema orientado a objetos, incluyendo clases, métodos y relaciones de herencia o asociación.
 
