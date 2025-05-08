@@ -13,8 +13,12 @@ import java.util.List;
 import java.util.Set;
 import reto.fourdam.AccesoBaseDatos;
 import reto.fourdam.Punto;
+import reto.fourdam.Resenna;
 import reto.fourdam.Ruta;
+import reto.fourdam.SWING.Calendario;
 import reto.fourdam.Usuario;
+import reto.fourdam.Valoracion;
+import reto.fourdam.ValoracionTec;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -34,7 +38,8 @@ public class metodosDB {
         List<Ruta> rutas = new ArrayList<>();
         try (Statement stmt = getConnection().createStatement(); ResultSet rs = stmt.executeQuery("SELECT id_rutas, id_usuario, nombre, fecha, latitud_inicial, longitud_inicial, latitud_final, longitud_final, distancia, desnivel, desnivel_positivo, desnivel_negativo, altitud_minima, altitud_maxima, estado, url, familiar, temporada, indicaciones, terreno, esfuerzo, riesgo, zona, recomendaciones, clasificacion, nombre_inicial, nombre_final, media_valoraciones FROM rutas;");) {
             while (rs.next()) {
-                Ruta ruta;
+                Ruta ruta = crearRuta(rs);
+                rutas.add(ruta);
             }
 
         } catch (SQLException ex) {
@@ -46,7 +51,43 @@ public class metodosDB {
         return rutas;
     }
 
-    public Usuario porId(int id) {
+    public List<Punto> listarPuntos() {
+        return null;
+    }
+    
+    public List<Valoracion> listarValoraciones() {
+        return null;
+    }
+    
+    public List<Resenna> listarResaennas() {
+        return null;
+    }
+    //PREGUNTAR
+    public List<ValoracionTec> listarValoracionesTecnicas() {
+        return null;
+    }
+    
+    
+    public void agregarRuta(){
+    }
+    
+    public void agregarCalendario(){
+    }
+    
+    public void agregarValoracion(){
+    }
+    
+    public void agregarResenna(){
+    }
+    
+    public void agregarValoracionTecnica(){
+    }
+    
+    public Ruta rutaPorId(int id){
+        return null;
+    }
+
+    public Usuario usuPorId(int id) {
         Usuario usuario = null;
         String sql = "SELECT id_usuario,nombre,apellidos,correo,contraseña,rol FROM usuarios WHERE id=?";
         try (PreparedStatement stmt = getConnection().prepareStatement(sql);) {
@@ -63,11 +104,27 @@ public class metodosDB {
         }
         return usuario;
     }
+    //PENSE QUE SI LA RUTA GUARDA EN AUTOR EL CORREO DEL USUARIO SOLO NECESITARIAMOS ESTE METODO
+    public Usuario usuPorCorreo(String correo) {
+        return null;
+    }
+    
+    public void eliminarRuta(){
+    }
+    
+    public void eliminarResenna(){
+    }
+    
+    public void modificarRuta(){   
+    }
+    
+    public void modificarPunto(){  
+    }
 
     private Ruta crearRuta(final ResultSet rs) throws SQLException {
         return new Ruta(
                 rs.getInt("id_rutas"),
-                porId(rs.getInt("id_usuario")),
+                usuPorId(rs.getInt("id_usuario")),
                 rs.getString("nombre"),
                 rs.getDate("fecha").toLocalDate(),
                 new Punto(
@@ -108,4 +165,23 @@ public class metodosDB {
                 rs.getString(5),
                 TipoUsuario.valueOf(rs.getString(6)));
     }
+    
+    private Calendario crearCalendario(final ResultSet rs) throws SQLException {
+        return null;
+    }
+    //USAR EN 'CREARRUTA'
+    private Punto crearPunto(final ResultSet rs) throws SQLException {
+        return null;
+    }
+    
+    private Valoracion crearValoracion(final ResultSet rs) throws SQLException {
+        return null;
+    }
+    private Resenna crearResenna(final ResultSet rs) throws SQLException {
+        return null;
+    }
+    private ValoracionTec crearValoracionTecnica(final ResultSet rs) throws SQLException {
+        return null;
+    }
+   
 }
