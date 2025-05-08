@@ -7,10 +7,16 @@ package reto.fourdam;
 import ENUMs.ClasificacionRuta;
 import ENUMs.Estado;
 import ENUMs.Temporada;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Set;
+import validaciones.Teclado;
 
 /**
  *
@@ -45,6 +51,7 @@ public class Ruta {
 
 
     public Ruta() {
+        
     }
   
     public Ruta(int id, Usuario autor, String nombre, LocalDate fecha_creacion, PuntoInteres punto_ini, PuntoInteres punto_fin, float distanciaTotal, LocalTime duracion, float desnivel, float altMax, float altMin, ClasificacionRuta clasificacion, int nivelRiesgo, int nivelEsfuerzo, int tipoTerreno, int indicaciones, String tipoActividad, Set<String> temporada, boolean accesibilidad, boolean familiar, String url, Estado estado, String recomendaciones, String zonaGeografica, File puntosIntermedios) {
@@ -73,8 +80,7 @@ public class Ruta {
         this.recomendaciones = recomendaciones;
         this.zonaGeografica = zonaGeografica;
         this.puntosIntermedios = puntosIntermedios;
-    }
-    
+    }    
         
     public Usuario getAutor() {
         return autor;
@@ -267,6 +273,36 @@ public class Ruta {
     public void setPuntosIntermedios(File puntosIntermedios) {
         this.puntosIntermedios = puntosIntermedios;
     }
+    
+    /*public File fichaSeguridad(){
+        String linea;
+        try (BufferedReader br = new BufferedReader(new FileReader(puntosIntermedios));) {
+            while ((linea = br.readLine()) != null) {
+                System.out.println(linea);
+            }
+        } catch (IOException ex) {
+            System.err.println(ex.toString());
+        }
+        File fichaSeg = new File("fichaSeguridad.txt");
+        String aux;
+        aux = Teclado.intervalos("Dificultad general",1,5);
+        
+        try (BufferedWriter br = new BufferedWriter(new FileWriter(fichero, true));) {
+            br.write(aux);
+            br.write(System.lineSeparator());
+        } catch (IOException ex) {
+            System.err.println(ex.toString());
+        }
+        return fichaSeg;
+    }
+    
+    public File fichaUsuario(){
+        
+    }
+    
+    public File fichaOrganizacion(){
+        
+    }*/
 
     @Override
     public String toString() {
