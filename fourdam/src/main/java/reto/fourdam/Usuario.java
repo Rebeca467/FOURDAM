@@ -11,13 +11,24 @@ import ENUMs.TipoUsuario;
  * @author DAM124
  */
 public class Usuario{
+    private int id;
     private String nombre;
     private String apellidos;
     private String email;
     private String cnna;
     private TipoUsuario rol;
 
+    public Usuario(int id,String nombre, String apellidos, String email, String cnna,TipoUsuario rol) {
+        this.id=id;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.email = email;
+        this.cnna = cnna;
+        this.rol= rol;
+
+    }
     public Usuario(String nombre, String apellidos, String email, String cnna,TipoUsuario rol) {
+        
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.email = email;

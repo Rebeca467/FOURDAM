@@ -21,13 +21,13 @@ public class Ruta {
     private Usuario autor;
     private String nombre;
     private LocalDate fecha_creacion;
-    private PuntoInteres punto_ini;
-    private PuntoInteres punto_fin;
-    private float distanciaTotal;
+    private Punto punto_ini;
+    private Punto punto_fin;
+    private double distanciaTotal;
     private LocalTime duracion;
-    private float desnivel;
-    private float altMax;
-    private float altMin;
+    private double desnivel;
+    private double altMax;
+    private double altMin;
     private ClasificacionRuta clasificacion;
     private int nivelRiesgo;
     private int nivelEsfuerzo;
@@ -46,8 +46,8 @@ public class Ruta {
 
     public Ruta() {
     }
-  
-    public Ruta(int id, Usuario autor, String nombre, LocalDate fecha_creacion, PuntoInteres punto_ini, PuntoInteres punto_fin, float distanciaTotal, LocalTime duracion, float desnivel, float altMax, float altMin, ClasificacionRuta clasificacion, int nivelRiesgo, int nivelEsfuerzo, int tipoTerreno, int indicaciones, String tipoActividad, Set<String> temporada, boolean accesibilidad, boolean familiar, String url, Estado estado, String recomendaciones, String zonaGeografica, File puntosIntermedios) {
+
+    public Ruta(int id, Usuario autor, String nombre, LocalDate fecha_creacion, Punto punto_ini, Punto punto_fin, double distanciaTotal, LocalTime duracion, double desnivel,double altMax, double altMin, ClasificacionRuta clasificacion, int nivelRiesgo, int nivelEsfuerzo, int tipoTerreno, int indicaciones, String tipoActividad, Set<String> temporada, boolean accesibilidad, boolean familiar, String url, Estado estado, String recomendaciones, String zonaGeografica, File puntosIntermedios) {
         this.id = id;
         this.autor = autor;
         this.nombre = nombre;
@@ -56,7 +56,7 @@ public class Ruta {
         this.punto_fin = punto_fin;
         this.distanciaTotal = distanciaTotal;
         this.duracion = duracion;
-        this.desnivel = desnivel;
+        this.desnivel= desnivel;
         this.altMax = altMax;
         this.altMin = altMin;
         this.clasificacion = clasificacion;
@@ -74,6 +74,9 @@ public class Ruta {
         this.zonaGeografica = zonaGeografica;
         this.puntosIntermedios = puntosIntermedios;
     }
+    
+  
+    
     
         
     public Usuario getAutor() {
@@ -100,7 +103,7 @@ public class Ruta {
         this.fecha_creacion = fecha_creacion;
     }
 
-    public PuntoInteres getPunto_ini() {
+    public Punto getPunto_ini() {
         return punto_ini;
     }
 
@@ -108,7 +111,7 @@ public class Ruta {
         this.punto_ini = punto_ini;
     }
 
-    public PuntoInteres getPunto_fin() {
+    public Punto getPunto_fin() {
         return punto_fin;
     }
 
@@ -116,8 +119,8 @@ public class Ruta {
         this.punto_fin = punto_fin;
     }
 
-    public float getDistanciaTotal() {
-        return distanciaTotal;
+   public double getDistanciaTotal() {
+      return distanciaTotal;
     }
 
     public void setDistanciaTotal(float distanciaTotal) {
@@ -132,7 +135,7 @@ public class Ruta {
         this.duracion = duracion;
     }
 
-    public float getDesnivel() {
+    public double getDesnivel() {
         return desnivel;
     }
 
@@ -140,7 +143,7 @@ public class Ruta {
         this.desnivel = desnivel;
     }
 
-    public float getAltMax() {
+   public double getAltMax() {
         return altMax;
     }
 
@@ -148,7 +151,7 @@ public class Ruta {
         this.altMax = altMax;
     }
 
-    public float getAltMin() {
+    public double getAltMin() {
         return altMin;
     }
 

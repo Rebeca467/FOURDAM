@@ -10,7 +10,7 @@ import reto.fourdam.Usuario;
  *
  * @author DAM120
  */
-public class CrearCalendario extends javax.swing.JFrame {
+public class CrearCalendario extends MenuBar {
 private Usuario usuario;
 
     /**

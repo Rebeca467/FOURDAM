@@ -5,7 +5,7 @@
 package reto.fourdam.SWING;
 
 import reto.fourdam.Usuario;
-import DAOs.RutaDAOImp;
+import DAOs.metodosDB;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.ListModel;
@@ -27,7 +27,7 @@ public class VerRutas extends MenuBar {
     public VerRutas(Usuario usuario) {
         this.usuario = usuario;
         DefaultListModel<Ruta> modelo = new DefaultListModel<>();
-        for (Ruta r : new RutaDAOImp().listar()) {
+        for (Ruta r : new metodosDB().listarRutas()) {
             modelo.addElement(r);
         }
         this.listaRutas=modelo;
@@ -223,8 +223,7 @@ public class VerRutas extends MenuBar {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
-        this.setVisible(false);
+        new CrearValoracionesTecnicas(usuario).setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
