@@ -46,7 +46,7 @@ Breve resumen del objetivo del proyecto, su funcionalidad principal y tecnologí
 > El diagrama de clases ilustra la estructura del sistema orientado a objetos, incluyendo clases, métodos y relaciones de herencia o asociación.
 
 ## Diagrama de Casos de Uso
-[Ver Diagrama de Casos](./diagrama_casos.png)
+[Ver Diagrama de Casos](./casos_uso_def.png)
 
 > El diagrama de casos de uso representa las funcionalidades del sistema desde la perspectiva de los usuarios, mostrando qué acciones puede realizar cada actor y cómo interactúan con el sistema.
 
