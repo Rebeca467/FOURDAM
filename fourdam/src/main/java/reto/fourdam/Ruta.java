@@ -80,7 +80,7 @@ public class Ruta {
         this.recomendaciones = recomendaciones;
         this.zonaGeografica = zonaGeografica;
         this.puntosIntermedios = puntosIntermedios;
-
+    }
         
     public Usuario getAutor() {
         return autor;
