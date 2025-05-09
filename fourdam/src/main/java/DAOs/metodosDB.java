@@ -191,14 +191,14 @@ public class metodosDB {
         } catch (SQLException e) {
 
         }
- 
+    }
     
     
 
     private Calendario crearCalendario(final ResultSet rs) throws SQLException {
         return null;
     }
-
+    
     //USAR EN 'CREARRUTA'
     private Punto crearPunto(final ResultSet rs) throws SQLException {
         return null;
@@ -215,5 +215,4 @@ public class metodosDB {
     private ValoracionTec crearValoracionTecnica(final ResultSet rs) throws SQLException {
         return null;
     }
-
 }
