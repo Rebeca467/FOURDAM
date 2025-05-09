@@ -15,7 +15,7 @@ public class PuntoInteres extends Punto {
     private String caracteristicasEsp;
 
     public PuntoInteres(double latitud, double longitud, String imagen, TipoPInteres tipo, String caracteristicasEsp) {
-        super(latitud,longitud, imagen);
+        super(latitud,longitud,imagen);
         this.tipo = tipo;
         this.caracteristicasEsp = caracteristicasEsp;
     }
