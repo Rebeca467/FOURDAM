@@ -4,6 +4,7 @@ import ENUMs.ClasificacionRuta;
 import ENUMs.Estado;
 import ENUMs.TipoUsuario;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -54,36 +55,36 @@ public class metodosDB {
     public List<Punto> listarPuntos() {
         return null;
     }
-    
+
     public List<Valoracion> listarValoraciones() {
         return null;
     }
-    
+
     public List<Resenna> listarResaennas() {
         return null;
     }
+
     //PREGUNTAR
     public List<ValoracionTec> listarValoracionesTecnicas() {
         return null;
     }
-    
-    
-    public void agregarRuta(){
+
+    public void agregarRuta() {
     }
-    
-    public void agregarCalendario(){
+
+    public void agregarCalendario() {
     }
-    
-    public void agregarValoracion(){
+
+    public void agregarValoracion() {
     }
-    
-    public void agregarResenna(){
+
+    public void agregarResenna() {
     }
-    
-    public void agregarValoracionTecnica(){
+
+    public void agregarValoracionTecnica() {
     }
-    
-    public Ruta rutaPorId(int id){
+
+    public Ruta rutaPorId(int id) {
         return null;
     }
 
@@ -104,21 +105,22 @@ public class metodosDB {
         }
         return usuario;
     }
+
     //PENSE QUE SI LA RUTA GUARDA EN AUTOR EL CORREO DEL USUARIO SOLO NECESITARIAMOS ESTE METODO
     public Usuario usuPorCorreo(String correo) {
         return null;
     }
-    
-    public void eliminarRuta(){
+
+    public void eliminarRuta() {
     }
-    
-    public void eliminarResenna(){
+
+    public void eliminarResenna() {
     }
-    
-    public void modificarRuta(){   
+
+    public void modificarRuta() {
     }
-    
-    public void modificarPunto(){  
+
+    public void modificarPunto() {
     }
 
     private Ruta crearRuta(final ResultSet rs) throws SQLException {
@@ -165,23 +167,53 @@ public class metodosDB {
                 rs.getString(5),
                 TipoUsuario.valueOf(rs.getString(6)));
     }
+
+    public void insertarValoracion(Valoracion v) {
+
+        String sql = "insert into valoraciones(id_usuario,Rutas_id_rutas,fecha,dificultad,belleza,interés,texto_tecnico,texto_reseña) values (?,?,?,?,?,?,?,?);";
+
+        try (PreparedStatement ps = getConnection().prepareStatement(sql);) {
+
+            ps.setObject(1, v.getUsuario());
+
+            ps.setObject(2, v.getRuta());
+
+            ps.setDate(3, Date.valueOf(v.getFecha()));
+
+            ps.setInt(4, v.getDificultad());
+
+            ps.setInt(5, v.getBelleza());
+
+            ps.setInt(6, v.getInteresCultural());
+
+            // texto_tecnico
+            // texto_reseña
+        } catch (SQLException e) {
+
+        }
+ 
     
+    
+
     private Calendario crearCalendario(final ResultSet rs) throws SQLException {
         return null;
     }
+
     //USAR EN 'CREARRUTA'
     private Punto crearPunto(final ResultSet rs) throws SQLException {
         return null;
     }
-    
+
     private Valoracion crearValoracion(final ResultSet rs) throws SQLException {
         return null;
     }
+
     private Resenna crearResenna(final ResultSet rs) throws SQLException {
         return null;
     }
+
     private ValoracionTec crearValoracionTecnica(final ResultSet rs) throws SQLException {
         return null;
     }
-   
+
 }

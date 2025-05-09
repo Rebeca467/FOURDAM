@@ -26,4 +26,54 @@ public class Valoracion {
         this.belleza = belleza;
         this.interesCultural = interesCultural;
     }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Ruta getRuta() {
+        return ruta;
+    }
+
+    public void setRuta(Ruta ruta) {
+        this.ruta = ruta;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
+
+    public int getDificultad() {
+        return dificultad;
+    }
+
+    public void setDificultad(int dificultad) {
+        this.dificultad = dificultad;
+    }
+
+    public int getBelleza() {
+        return belleza;
+    }
+
+    public void setBelleza(int belleza) {
+        this.belleza = belleza;
+    }
+
+    public int getInteresCultural() {
+        return interesCultural;
+    }
+
+    public void setInteresCultural(int interesCultural) {
+        this.interesCultural = interesCultural;
+    }
+    
+    
 }
